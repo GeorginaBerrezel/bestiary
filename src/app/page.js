@@ -12,6 +12,7 @@ import Header from "@/components/Header";
 import Product from "@/components/Product";
 import SnappingScroll from "@/components/SnappingScroll";
 import Vote from "@/components/Vote";
+import Order from "@/components/Order";
 export default function Home() {
     return (
         <div className="flex flex-col items-center justify-between min-h-screen">
@@ -40,8 +41,8 @@ export default function Home() {
 
             <Vote />
 
-            <CTARegular text="En savoir plus" />
-            <CTANav text="à propos" />
+            <Order />
+
             <footer>
                 <Footer />
             </footer>

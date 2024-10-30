@@ -17,8 +17,8 @@ const CTARegular = ({ text }) => {
                 justify-content: space-between;
                 padding: 10px 20px;
                 border: 2px solid black; /* Contour noir */
-                background: transparent;
-                color: black;
+                background: #11FF00;
+                color: white;
                 font-family: 'JetBrains Mono', monospace; /* Utilisation de JetBrains Mono */
                 font-weight: 400; /* Regular */
                 font-size: 17px;
@@ -28,8 +28,9 @@ const CTARegular = ({ text }) => {
               }
 
               .cta-button:hover {
-                background: #11FF00; /* Vert fluo au survol */
-                border: transparent; /* Retrait du contour */
+                background: transparent; /* Vert fluo au survol */
+                border: 2px solid white;
+                color: white;
               }
 
               .cta-button img {
