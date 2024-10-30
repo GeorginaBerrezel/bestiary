@@ -36,7 +36,7 @@ export default function Home() {
             <div ref={container} className="container-animation">
                 <div ref={stickyMask} className="stickyMask">
                     {/* Contenu vide ou une couleur de fond */}
-                    <div style={{ width: "100%", height: "100%", backgroundColor: "white" }}></div>
+                    <div style={{ width: "100%", height: "100%", backgroundColor: "#F5F5F5" }}></div>
                 </div>
             </div>
             <div className="container-animation2">

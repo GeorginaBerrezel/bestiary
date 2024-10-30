@@ -49,7 +49,7 @@ const Hero = () => {
                 width: 100%;
                 height: 100vh; 
                 padding: 20px; 
-                background-color: white;
+                background-color: #F5F5F5;
                 align-items: center; 
                 justify-items: center; 
               }

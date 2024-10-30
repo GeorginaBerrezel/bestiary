@@ -70,7 +70,7 @@ h3 {
 }
 
 .container-animation2 {
-  background-color: white;
+  background-color: var(--white-web);
   height: auto;
 }
 

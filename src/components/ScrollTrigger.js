@@ -62,18 +62,23 @@ const ScrollTriggerComponent = () => {
             <div id="content">
                 <div className="intro">
                     <h2>L'inclusion commence par la manière dont nous parlons au Monde</h2>
-                    <p>
-                        Bestiary est une marque engagée qui valorise l'inclusion des monstres au sein de notre société.
-                        Des produits innovants qui favorisent le bien vivre ensemble, parce que chaque individu
-                        mérite d'être reconnu et valorisé.
-                    </p>
+                    {/* Nouvelle div pour le paragraphe */}
+                    <div className="intro-text">
+                        <p>
+                            Bestiary est une marque engagée qui valorise l'inclusion des monstres au sein de notre société.
+                            Des produits innovants qui favorisent le bien vivre ensemble, parce que chaque individu
+                            mérite d'être reconnu et valorisé.
+                        </p>
+                    </div>
+                    {/* Image 1 positionnée à droite */}
+                    <div ref={image1Ref} className="parallax-image image1">
+                        <Image src={image1} alt="Image 1" width={800} height={800} />
+                    </div>
                 </div>
 
-                {/* Images avec parallaxe */}
-                <div className="parallax-images">
-                    <div ref={image1Ref} className="parallax-image">
-                        <Image src={image1} alt="Image 1" width={300} height={300} />
-                    </div>
+                {/* Image 2 positionnée à gauche */}
+                <div ref={image2Ref} className="parallax-image image2">
+                    <Image src={image2} alt="Image 2" width={800} height={800} />
                 </div>
 
                 <div className="accordions">
@@ -97,11 +102,6 @@ const ScrollTriggerComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="parallax-images">
-                    <div ref={image2Ref} className="parallax-image">
-                        <Image src={image2} alt="Image 2" width={300} height={300} />
-                    </div>
-                </div>
             </div>
 
             <style jsx>{`
@@ -115,6 +115,7 @@ const ScrollTriggerComponent = () => {
               #content {
                 width: 60%; /* Réduit la largeur du conteneur */
                 margin: 0 auto; /* Centre le contenu */
+                position: relative; /* Position relative pour que les enfants absolus soient positionnés correctement */
               }
 
               .intro {
@@ -130,23 +131,40 @@ const ScrollTriggerComponent = () => {
                 color: #000;
               }
 
-              .intro p {
+              .intro-text {
+                width: 50%; /* Largeur à 50% pour le paragraphe */
+                text-align: left; /* Alignement à gauche */
+                margin-top: 5rem;
+                // margin: 0 auto; /* Centre horizontalement */
+              }
+
+              .intro-text p {
                 font-size: 18px;
                 color: rgba(0, 0, 0, 0.7);
               }
 
               .parallax-images {
-                display: flex;
-                justify-content: space-around;
-                margin-top: 50px;
-                position: relative;
-                height: 400px;
+                position: relative; /* Position relative pour le conteneur d'images */
+                height: 400px; /* Ajustez la hauteur selon vos besoins */
+                overflow: hidden; /* Assurez-vous que les images restent à l'intérieur */
               }
 
               .parallax-image {
-                width: 300px;
-                height: 300px;
-                overflow: hidden;
+                position: absolute; /* Position absolue pour chaque image */
+                width: 800px;
+                height: 800px;
+              }
+
+              .image1 {
+                top: 0%; /* Positionnez l'image 1 en haut */
+                left: 40%; /* Positionnez à droite */
+                z-index: -1;
+              }
+
+              .image2 {
+                top: 50%; /* Positionnez l'image 2 au milieu */
+                left: -30%; /* Positionnez à gauche */
+                transform: translateY(-50%); /* Ajuste le centrage vertical */
               }
 
               .accordions {
