@@ -50,7 +50,6 @@ const ScrollTriggerComponent = () => {
                         start: "top 80%", // Lancement de l'animation lorsqu'il atteint 80% de la fenêtre
                         end: "bottom top",
                         scrub: true,
-                        markers: true,
                     },
                 }
             );

@@ -30,7 +30,6 @@ const SnappingScroll = () => {
                 trigger: ".container",
                 start: "top top",
                 end: "+=" + (window.innerWidth * panels.length),
-                markers: true, // Pour le débogage, à enlever en production
                 pin: true,
                 scrub: 1,
             }
