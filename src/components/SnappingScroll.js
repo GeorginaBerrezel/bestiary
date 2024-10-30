@@ -7,6 +7,17 @@ import Image from "next/image";
 import imgProduct from "../../public/pack.png";
 import packagingProduct from "../../public/packaging.png";
 import reelProduct from "../../public/Refresh_hd.jpg";
+import etiquette from "../../public/close-up-refresh-etiquette.png";
+import step1 from "../../public/step1.png";
+import step2 from "../../public/step2.png";
+import step3 from "../../public/step3.png";
+import description1 from "../../public/description1.png";
+import description2 from "../../public/description2.png";
+import description3 from "../../public/description3.png";
+import avis1 from "../../public/avis1.png";
+import avis2 from "../../public/avis2.png";
+import avis3 from "../../public/avis3.png";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,37 +98,68 @@ const SnappingScroll = () => {
                         <p className="text" style={{position: 'absolute', top: '5%', left: '60%', width: '30%'}}>Ces
                             dimensions ont été soigneusement pensées pour une manipulation facile, assurant une
                             application efficace sur chacune de ses trois têtes.</p>
-                        <p className="text" style={{position: 'absolute', bottom: '5%', left: '5%', width: '30%'}}>Taille parfaite</p>
-                        <p className="text" style={{position: 'absolute', bottom: '5%', right: '5%', width: '30%'}}>prix: 1500€</p>
+                        <p className="text"
+                           style={{position: 'absolute', bottom: '5%', left: '5%', width: '30%'}}>Taille parfaite</p>
+                        <p className="text"
+                           style={{position: 'absolute', bottom: '5%', right: '5%', width: '30%'}}>prix: 1500€</p>
                     </div>
                 </div>
 
                 <div className="panel">
                     <div className="inner">
-                        <Image src={packagingProduct} alt="Image de Produit" layout="fill" objectFit="contain"/>
+                        <p className="text" style={{position: 'absolute', top: '5%', left: '5%', width: '30%'}}>En 3
+                            étapes</p>
+                        <div className="steps-container">
+                            <Image src={step1} alt="Étape 1" objectFit="contain"/>
+                            <Image src={step2} alt="Étape 2" objectFit="contain"/>
+                            <Image src={step3} alt="Étape 3" objectFit="contain"/>
+                        </div>
                     </div>
                 </div>
                 <div className="panel">
                     <div className="inner">
-                        <h2> HONRIZONTAL Lorem Ipsum 4</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <Image src={etiquette} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
+                    <div className="block-description">
+                        <Image src={description1} alt="Étape 1" objectFit="contain"/>
+                        <Image src={description2} alt="Étape 1" objectFit="contain"/>
+                        <Image src={description3} alt="Étape 1" objectFit="contain"/>
+                    </div>
 
-                        <Image src={reelProduct} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
                 </div>
                 <div className="panel">
                     <div className="inner">
-                        <h2> HONRIZONTAL Lorem Ipsum 4</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h2
+                            style={{position: 'absolute', bottom: '5%', left: '10%', zIndex: '1'}}>Avis</h2>
+
+                        <div className="block-description">
+                            <Image src={avis1} alt="Étape 1" objectFit="contain" style={{
+                                width: '30%',
+                                position: 'absolute',
+                                top: '20%',
+                                left: '20%',
+                                transform: 'translate(-50%, -50%)'
+                            }}/>
+                            <Image src={avis2} alt="Étape 1" objectFit="contain" style={{
+                                width: '30%',
+                                position: 'absolute',
+                                top: '40%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)'
+                            }}/>
+                            <Image src={avis3} alt="Étape 1" objectFit="contain" style={{
+                                width: '30%',
+                                position: 'absolute',
+                                top: '60%',
+                                left: '70%',
+                                transform: 'translate(-50%, -50%)'
+                            }}/>
+                        </div>
 
                     </div>
+                </div>
+                <div className="panel">
+                    <div className="inner">
+                        <Image src={etiquette} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
                 </div>
 
             </section>
@@ -156,7 +198,7 @@ const SnappingScroll = () => {
                 width: 100vw;
                 height: 100%;
                 display: flex;
-                background-color: #F5F5F5;
+                background-color: white;
                 position: relative; /* Nécessaire pour la position absolue des éléments internes */
               }
 
@@ -184,6 +226,11 @@ const SnappingScroll = () => {
 
               p {
                 font-size: 18px; /* Taille uniforme du texte */
+              }
+
+              .block-description {
+                display: block;
+                margin-right: 5rem;
               }
             `}</style>
         </div>
