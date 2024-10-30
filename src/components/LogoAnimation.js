@@ -39,7 +39,7 @@ export default function Home() {
                     <div style={{ width: "100%", height: "100%", backgroundColor: "white" }}></div>
                 </div>
             </div>
-            <div className="container-animtion2">
+            <div className="container-animation2">
                 <Hero />
             </div>
         </main>

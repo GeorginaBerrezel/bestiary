@@ -1,4 +1,3 @@
-// components/ScrollingText.js
 "use client"; // Assurez-vous d'utiliser le mode client si vous manipulez le DOM directement
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -11,42 +10,42 @@ const ScrollingText = () => {
 
     useEffect(() => {
         const races = textRef.current; // Référence à l'élément de texte
-        const totalWidth = races.scrollWidth; // Largeur totale du texte
+        const racesWidth = races.scrollWidth; // Largeur totale du texte
         const windowWidth = window.innerWidth; // Largeur de la fenêtre
-// test
+
         // Fonction pour calculer le montant du défilement
-        function getScrollAmount() {
-            return -(totalWidth - windowWidth);
-        }
+        const getScrollAmount = () => -(racesWidth - windowWidth);
 
         // Animation avec GSAP
         const tween = gsap.to(races, {
-            x: getScrollAmount,
+            x: getScrollAmount, // Défilement vers la gauche
             duration: 3,
             ease: "none",
         });
 
-        // Création du ScrollTrigger
+        // ScrollTrigger
         ScrollTrigger.create({
-            trigger: races.parentElement, // Le conteneur parent
-            start: "top 20%",
-            end: () => `+=${getScrollAmount() * -1}`, // Utilise la fonction pour définir la fin
-            pin: true,
-            animation: tween,
-            scrub: 1,
-            invalidateOnRefresh: true,
-            markers: true // Pour le débogage, à enlever en production
+            trigger: ".racesWrapper", // Le conteneur parent
+            start: "top 20%", // Démarrer quand le haut du conteneur est à 20% de la hauteur de la fenêtre
+            end: () => `+=${Math.abs(getScrollAmount())}`, // Fin de l'animation
+            pin: true, // Active l'effet de pin
+            animation: tween, // L'animation à jouer
+            scrub: 1, // Synchronise l'animation avec le défilement
+            invalidateOnRefresh: true, // Invalide le trigger lors du rafraîchissement de la page
+            markers: true, // Pour le débogage, à enlever en production
         });
 
         return () => {
             // Nettoyage lorsque le composant est démonté
-            ScrollTrigger.kill();
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Détruire tous les ScrollTriggers
         };
     }, []);
 
     return (
-        <div ref={textRef} style={{ whiteSpace: 'nowrap', width: '100%' }}>
-            <h2 style={{ display: 'inline-block', fontSize: '5rem' }}>Ceci est un texte défilant vraiment énorme. | </h2>
+        <div className="racesWrapper" style={{ overflow: 'hidden', position: 'relative' }}> {/* Ajout d'un conteneur pour cacher le débordement */}
+            <div ref={textRef} style={{ whiteSpace: 'nowrap', width: 'max-content' }}>
+                <h2 style={{ display: 'inline-block', fontSize: '5rem' }}>PAR LES HUMAINS, POUR LES MONSTRES</h2>
+            </div>
         </div>
     );
 };
