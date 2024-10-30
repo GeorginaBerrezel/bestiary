@@ -8,7 +8,6 @@ import ScrollingText from "@/components/ScrollingText";
 import Footer from "@/components/Footer";
 import CTARegular from "@/components/CtaRegular";
 import CTANav from "@/components/CtaNav";
-import Hero from "@/components/Hero";
 import LogoAnimation from "@/components/LogoAnimation"
 export default function Home() {
     return (
@@ -32,10 +31,6 @@ export default function Home() {
                     width={500}
                     height={500}
                 />
-            </div>
-
-            <div>
-                <Hero />
             </div>
 
             {/* Section de texte */}

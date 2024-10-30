@@ -1,31 +1,39 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
-import img1 from '../../public/monsters.svg'; // Vérifiez que le chemin est correct
+import Model3D from '../components/Model3D';
 
 const Hero = () => {
     return (
         <div className="hero-container">
             <div className="hero-image">
-                <Image src={img1} alt="Image 1" fill style={{ objectFit: 'cover' }} />
+                <Model3D path="/lilith.glb" />
+            </div>
+            <div className="hero-image">
+                <Model3D path="/lilith.glb" />
+            </div>
+            <div className="hero-image">
+                <Model3D path="/lilith.glb" />
             </div>
             <style jsx>{`
-                .hero-container {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    height: 100vh; /* Ajuste la hauteur selon tes besoins */
-                    overflow: hidden; /* Cache tout débordement */
-                    position: relative; /* Nécessaire pour positionner l'image */
-                }
+              .hero-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+                gap: 20px; /* Espace entre chaque modèle */
+                width: 100%;
+                height: 100vh; /* Assurez-vous que le conteneur a une hauteur définie */
+                padding: 20px; /* Ajoute un padding à l'intérieur du conteneur */
+                background-color: black;
+                align-items: center; /* Centre verticalement les éléments de la grille */
+                justify-items: center; /* Centre horizontalement les éléments de la grille */
+              }
 
-                .hero-image {
-                    position: relative; /* Nécessaire pour l'utilisation de layout="fill" */
-                    width: 100%;
-                    height: 100%;
-                }
+              .hero-image {
+                position: relative; /* Nécessaire pour l'utilisation de layout="fill" */
+                height: 400px; /* Hauteur fixe pour chaque modèle */
+                width: 400px; /* Largeur fixe pour chaque modèle */
+                max-width: 100%; /* Empêche le débordement */
+              }
             `}</style>
         </div>
     );

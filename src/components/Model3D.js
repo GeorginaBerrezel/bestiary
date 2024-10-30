@@ -2,9 +2,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-const Model3D = () => {
+const Model3D = ({ path }) => {
     const mountRef = useRef(null);
     const [isClient, setIsClient] = useState(false);
 
@@ -16,12 +15,12 @@ const Model3D = () => {
         if (!isClient) return;
 
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, 400 / 400, 0.1, 1000); // Ratio 400/400 pour la caméra
         const renderer = new THREE.WebGLRenderer();
 
         // Modifier la couleur de fond
         renderer.setClearColor(0xffffff, 1); // Blanc, changez si nécessaire
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(400, 400); // Taille de la scène 400x400 pixels
         mountRef.current.appendChild(renderer.domElement);
 
         // Ajouter des lumières
@@ -33,10 +32,11 @@ const Model3D = () => {
         scene.add(directionalLight);
 
         const loader = new GLTFLoader();
-        const modelPath = '/lilith.glb'; // Vérifiez ce chemin
-
-        loader.load(modelPath, (gltf) => {
+        loader.load(path, (gltf) => {
             const model = gltf.scene;
+
+            // Échelle du modèle
+            model.scale.set(0.5, 0.5, 0.5); // Ajustez cette valeur selon vos besoins
 
             // Rotation initiale de l'objet
             model.rotation.y = Math.PI / 4; // Tourner l’objet de 45 degrés (π/4 radians) sur l’axe Y
@@ -44,16 +44,10 @@ const Model3D = () => {
             scene.add(model);
 
             // Position de la caméra
-            camera.position.z = 6; // Essayez une position plus éloignée
-
-            // const controls = new OrbitControls(camera, renderer.domElement);
-            // controls.enableDamping = true;
-            // controls.dampingFactor = 0.25;
-            // controls.enableZoom = true;
+            camera.position.z = 2; // Réduire la position de la caméra pour rapprocher le modèle
 
             const animate = () => {
                 requestAnimationFrame(animate);
-                // controls.update();
                 renderer.render(scene, camera);
             };
 
@@ -63,18 +57,18 @@ const Model3D = () => {
         });
 
         window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.aspect = 400 / 400; // Ratio 1:1
             camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setSize(400, 400); // Redimensionner le renderer
         });
 
         return () => {
             mountRef.current.removeChild(renderer.domElement);
             window.removeEventListener('resize', () => {});
         };
-    }, [isClient]);
+    }, [isClient, path]);
 
-    return <div ref={mountRef} style={{ width: '100%', height: '100vh' }}></div>;
+    return <div ref={mountRef} style={{ width: '400px', height: '400px' }}></div>; // Définit la taille du conteneur
 };
 
 export default Model3D;
