@@ -13,7 +13,7 @@ const ScrollingText = () => {
         const races = textRef.current; // Référence à l'élément de texte
         const totalWidth = races.scrollWidth; // Largeur totale du texte
         const windowWidth = window.innerWidth; // Largeur de la fenêtre
-
+// test
         // Fonction pour calculer le montant du défilement
         function getScrollAmount() {
             return -(totalWidth - windowWidth);
