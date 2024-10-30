@@ -65,85 +65,89 @@ const Product = () => {
                 <div className="image-container">
                     <Image src={imgProduct} alt="Image de Produit" layout="fill" objectFit="contain" />
                 </div>
-                <div ref={textBlock1Ref} className="text-block block1">Texte Block 1</div>
-                <div ref={textBlock2Ref} className="text-block block2">Texte Block 2</div>
+                <div ref={textBlock1Ref} className="text-block block1">Nous avons conçu une gamme de <span className="green">trois produits</span> essentiels, formulés pour chaque créature</div>
+                <div ref={textBlock2Ref} className="text-block block2">Pas de promesses exagérées, pas de superflu. Des solutions concrètes pour <span className="green">répondre aux besoins spécifiques de chacun.</span></div>
             </div>
             <style jsx>{`
-                .product-container {
-                    background-color: black; /* Fond noir intégral */
-                    color: white; /* Couleur du texte par défaut */
-                    height: 100vh; /* Hauteur de la section */
-                    width: 100vw;
-                    position: relative; /* Nécessaire pour le positionnement absolu */
-                }
+              .product-container {
+                background-color: black; /* Fond noir intégral */
+                color: white; /* Couleur du texte par défaut */
+                height: 100vh; /* Hauteur de la section */
+                width: 100vw;
+                position: relative; /* Nécessaire pour le positionnement absolu */
+              }
 
-                .top-links {
-                    display: grid; /* Flex pour aligner les liens horizontalement */
-                    justify-content: space-around; /* Espacement entre les liens */
-                  text-align: center;
-                    padding: 20px; /* Espacement interne */
-                    background-color: black; /* Fond noir pour les liens */
-                }
+              .top-links {
+                display: grid; /* Flex pour aligner les liens horizontalement */
+                justify-content: space-around; /* Espacement entre les liens */
+                text-align: center;
+                padding: 20px; /* Espacement interne */
+                background-color: black; /* Fond noir pour les liens */
+              }
 
-                .link {
-                    text-decoration: none; /* Pas de soulignement */
-                    font-size: 20px; /* Taille de police pour les liens */
-                  text-transform: uppercase;
-                }
+              .link {
+                text-decoration: none; /* Pas de soulignement */
+                font-size: 20px; /* Taille de police pour les liens */
+                text-transform: uppercase;
+              }
 
-                .white {
-                    color: white; /* Liens en blanc */
-                }
+              .white {
+                color: white; /* Liens en blanc */
+              }
 
-                .green {
-                    color: #11FF00; /* Liens en vert */
-                }
+              .green {
+                color: #11FF00; /* Liens en vert */
+              }
 
-                .middle-section {
-                    position: relative; /* Nécessaire pour positionner les éléments internes */
-                    height: calc(100vh - 60px); /* Hauteur restante après les liens */
-                    display: flex; /* Utiliser flexbox pour centrer le contenu */
-                    justify-content: center; /* Centrer horizontalement */
-                    align-items: center; /* Centrer verticalement */
-                    flex-direction: column; /* Alignement vertical des éléments */
-                }
+              .middle-section {
+                position: relative; /* Nécessaire pour positionner les éléments internes */
+                height: calc(100vh - 60px); /* Hauteur restante après les liens */
+                display: flex; /* Utiliser flexbox pour centrer le contenu */
+                justify-content: center; /* Centrer horizontalement */
+                align-items: center; /* Centrer verticalement */
+                flex-direction: column; /* Alignement vertical des éléments */
+              }
 
-                .title {
-                    position: absolute; /* Positionné en haut */
-                    top: 20px; /* Espace en haut */
-                    left: 50%; /* Centrer horizontalement */
-                  text-transform: uppercase;
-                  text-align: center;
-                  color:white;
-                    transform: translateX(-50%); /* Ajuster le centrage */
-                    font-size: 36px; /* Taille du titre */
-                }
+              .title {
+                position: absolute; /* Positionné en haut */
+                top: 20px; /* Espace en haut */
+                left: 50%; /* Centrer horizontalement */
+                text-transform: uppercase;
+                text-align: center;
+                color: white;
+                transform: translateX(-50%); /* Ajuster le centrage */
+                font-size: 36px; /* Taille du titre */
+                width: 30%;
+              }
 
-                .image-container {
-                    position: relative; /* Nécessaire pour le positionnement de l'image */
-                    height: 300px; /* Hauteur de l'image */
-                    width: 100%; /* Prendre toute la largeur disponible */
-                    max-width: 600px; /* Largeur maximale de l'image */
-                    overflow: hidden; /* Masquer les débordements */
-                }
+              .image-container {
+                position: relative; /* Nécessaire pour le positionnement de l'image */
+                height: 300px; /* Hauteur de l'image */
+                width: 100%; /* Prendre toute la largeur disponible */
+                max-width: 600px; /* Largeur maximale de l'image */
+                overflow: hidden; /* Masquer les débordements */
+              }
 
-                .text-block {
-                    position: absolute; /* Positionnement absolu pour superposer le texte */
-                    color: white; /* Couleur du texte */
-                    font-size: 24px; /* Taille de police pour les blocs de texte */
-                }
+              .text-block {
+                position: absolute; /* Positionnement absolu pour superposer le texte */
+                color: white; /* Couleur du texte */
+                font-size: 24px; /* Taille de police pour les blocs de texte */
+              }
 
-                .block1 {
-                    bottom: 100px; /* Positionnement en bas du conteneur */
-                    left: 50%; /* Centrer horizontalement */
-                    transform: translateX(-50%); /* Ajuster le centrage */
-                }
+              .block1 {
+                top: 40%;
+                left: 20%; /* Centrer horizontalement */
+                transform: translateX(-50%); /* Ajuster le centrage */
+                width: 30%;
+              }
 
-                .block2 {
-                    bottom: 50px; /* Positionnement en bas du conteneur */
-                    left: 50%; /* Centrer horizontalement */
-                    transform: translateX(-50%); /* Ajuster le centrage */
-                }
+              .block2 {
+                bottom: 15%; /* Positionnement en bas du conteneur */
+                left: 80%; /* Centrer horizontalement */
+                transform: translateX(-50%); /* Ajuster le centrage */
+                width: 30%;
+
+              }
             `}</style>
         </div>
     );

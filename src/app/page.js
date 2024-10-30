@@ -10,6 +10,7 @@ import CTANav from "@/components/CtaNav";
 import LogoAnimation from "@/components/LogoAnimation"
 import Header from "@/components/Header";
 import Product from "@/components/Product";
+import SnappingScroll from "@/components/SnappingScroll";
 export default function Home() {
     return (
         <div className="flex flex-col items-center justify-between min-h-screen">
@@ -33,7 +34,8 @@ export default function Home() {
                 <ScrollingText />
             </div>
 
-            <Product />
+
+            <SnappingScroll />
 
             <CTARegular text="En savoir plus" />
             <CTANav text="à propos" />
