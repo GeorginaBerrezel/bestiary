@@ -5,6 +5,9 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import img1 from '../../public/Sharp_hd.jpg';
+import img2 from '../../public/Refresh_hd.jpg';
+import img3 from '../../public/Carve.jpg';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,10 +36,10 @@ const Hero = () => {
                 <Image src={img1} alt="Image 1" layout="fill" objectFit="cover" />
             </div>
             <div className="hero-image" ref={el => imagesRef.current[1] = el}>
-                <Image src={img1} alt="Image 2" layout="fill" objectFit="cover" />
+                <Image src={img2} alt="Image 2" layout="fill" objectFit="cover" />
             </div>
             <div className="hero-image" ref={el => imagesRef.current[2] = el}>
-                <Image src={img1} alt="Image 3" layout="fill" objectFit="cover" />
+                <Image src={img3} alt="Image 3" layout="fill" objectFit="cover" />
             </div>
             <style jsx>{`
               .hero-container {

@@ -6,6 +6,7 @@
 
 :root {
   --green-fluo: #11FF00;
+  --white-web: #F5F5F5;
 }
 
 header {
@@ -14,7 +15,7 @@ header {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--white-web);
   font-family: 'Helvetica', sans-serif;
 }
 

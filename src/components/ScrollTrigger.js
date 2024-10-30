@@ -1,64 +1,65 @@
 "use client";
-import React, {useEffect} from "react";
-import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import image1 from '../../public/pack.png';
+import image2 from '../../public/pack.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollTriggerComponent = () => {
+    const image1Ref = useRef(null);
+    const image2Ref = useRef(null);
+    const accordionsRef = useRef([]); // Références pour les accordions
+
     useEffect(() => {
-        // Timeline pour gérer l'animation
-        const tl = gsap.timeline({
+        // Animation de parallaxe pour les images
+        gsap.to(image1Ref.current, {
+            y: "-20%",
+            ease: "none",
             scrollTrigger: {
-                trigger: ".accordions", // Pin seulement à partir de la section des accordions
-                pin: true,
-                scrub: 1,
-                start: "top top", // Commence au début de l'accordion
-                end: "+=500", // Ajustez la durée du pin ici
-                ease: "linear",
-                markers: true,
+                trigger: ".accordions",
+                start: "top bottom",
+                scrub: true,
             },
         });
 
-        // Animation des textes dans les accordions
-        tl.to(".accordion .text", {
-            height: 0,
-            paddingBottom: 0,
-            opacity: 0,
-            stagger: 0.5,
+        gsap.to(image2Ref.current, {
+            y: "20%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".accordions",
+                start: "top bottom",
+                scrub: true,
+            },
         });
 
-        tl.to(
-            ".accordion",
-            {
-                marginBottom: -15,
-                stagger: 0.5,
-            },
-            "<"
-        );
-
-        // Gestion des clics sur les accordions
-        const items = document.querySelectorAll(".accordion");
-        items.forEach((item, i) => {
-            item.addEventListener("click", function () {
-                gsap.to(window, {
-                    scrollTo: tl.scrollTrigger.labelToScroll(`label${i + 1}`),
+        // Animation des accordions qui arrivent les uns après les autres
+        gsap.utils.toArray(".accordion").forEach((accordion, index) => {
+            gsap.fromTo(
+                accordion,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
                     duration: 1,
-                });
-            });
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: accordion,
+                        start: "top 80%", // Lancement de l'animation lorsqu'il atteint 80% de la fenêtre
+                        end: "bottom top",
+                        scrub: true,
+                        markers: true,
+                    },
+                }
+            );
         });
-
-        return () => {
-            items.forEach((item) => {
-                item.replaceWith(item.cloneNode(true));
-            });
-        };
     }, []);
 
     return (
         <div id="wrapper">
             <div id="content">
-                {/* Ajout du titre et du texte ici */}
                 <div className="intro">
                     <h2>L'inclusion commence par la manière dont nous parlons au Monde</h2>
                     <p>
@@ -68,36 +69,37 @@ const ScrollTriggerComponent = () => {
                     </p>
                 </div>
 
-                <div className="spacer"></div>
+                {/* Images avec parallaxe */}
+                <div className="parallax-images">
+                    <div ref={image1Ref} className="parallax-image">
+                        <Image src={image1} alt="Image 1" width={300} height={300} />
+                    </div>
+                </div>
 
                 <div className="accordions">
-                    <div className="accordion">
+                    {/* Accordions */}
+                    <div className="accordion" ref={el => accordionsRef.current[0] = el}>
                         <div className="title">
-                            <span className="title-number">001</span>
-                            <span>Technologie utilisé</span>
-                        </div>
-                        <div className="text">
-                            Des solutions techniques de pointe, adaptées aux particularités uniques de chaque monstre,
-                            pour un soin efficace et précis.
+                            <h2 className="title-number">01</h2>
+                            <p>Technologie utilisée</p>
                         </div>
                     </div>
-                    <div className="accordion">
+                    <div className="accordion" ref={el => accordionsRef.current[1] = el}>
                         <div className="title">
-                            <span className="title-number">002</span>
-                            <span>Matériaux adaptés</span>
-                        </div>
-                        <div className="text">
-                            Des matériaux sélectionnés avec soin pour leur durabilité
+                            <h2 className="title-number">02</h2>
+                            <p>Matériaux adaptés</p>
                         </div>
                     </div>
-                    <div className="accordion">
+                    <div className="accordion" ref={el => accordionsRef.current[2] = el}>
                         <div className="title">
-                            <span className="title-number">003</span>
-                            <span>Exclusif pour chaque créature</span>
+                            <h2 className="title-number">03</h2>
+                            <p>Exclusif pour chaque créature</p>
                         </div>
-                        <div className="text">
-                            Des produits sur-mesure, conçus pour répondre aux besoins uniques de chaque monstre
-                        </div>
+                    </div>
+                </div>
+                <div className="parallax-images">
+                    <div ref={image2Ref} className="parallax-image">
+                        <Image src={image2} alt="Image 2" width={300} height={300} />
                     </div>
                 </div>
             </div>
@@ -110,79 +112,76 @@ const ScrollTriggerComponent = () => {
                 scroll-behavior: none;
               }
 
+              #content {
+                width: 60%; /* Réduit la largeur du conteneur */
+                margin: 0 auto; /* Centre le contenu */
+              }
+
               .intro {
-                width: 70%; /* Prend 70% de la largeur depuis la gauche */
                 text-align: left;
-                padding: 20px; /* Ajout d'un peu d'espace autour */
-                margin: 0 auto; /* Centre le conteneur */
+                padding: 20px;
               }
 
               .intro h2 {
-                font-size: 36px; /* Taille du titre */
-                margin-bottom: 10px; /* Espace sous le titre */
-                color: #000; /* Couleur du titre */
+                font-size: 36px;
+                text-transform: uppercase;
+                text-align: center;
+                margin-bottom: 10px;
+                color: #000;
               }
 
               .intro p {
-                font-size: 18px; /* Taille du texte descriptif */
-                color: rgba(0, 0, 0, 0.7); /* Couleur du texte */
+                font-size: 18px;
+                color: rgba(0, 0, 0, 0.7);
+              }
+
+              .parallax-images {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 50px;
+                position: relative;
+                height: 400px;
+              }
+
+              .parallax-image {
+                width: 300px;
+                height: 300px;
+                overflow: hidden;
               }
 
               .accordions {
-                width: 80%; /* Prend 70% de la largeur depuis la droite */
-                position: relative; /* Positionne par rapport à son conteneur */
-                right: 0; /* Aligne à droite */
+                width: 100%; /* Prend toute la largeur du conteneur */
+                position: relative;
+                right: 0;
                 display: flex;
                 flex-direction: column;
-                align-items: stretch;
+                align-items: center; /* Centre les accordions */
                 padding-bottom: 20vh;
               }
 
               .title {
-                font-size: 70px; /* H2 */
+                font-size: 24px; /* Ajusté pour un texte plus petit */
                 line-height: 1.1;
-                padding-bottom: 0.4em;
-                color: rgb(0, 0, 0);
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 10px;
+                text-align: center; /* Centre le texte des titres */
+                padding: 10px; /* Un peu d'espace autour du texte */
               }
 
               .title-number {
                 font-weight: bold;
-                font-size: 40px; /* H3 */
-                color: rgba(0, 0, 0, 0.5);
-              }
-
-              .text {
-                font-size: 17px; /* Texte courant */
-                line-height: 1.4;
-                overflow: hidden;
-                padding-bottom: 20px;
-                color: rgba(0, 0, 0, 0.7);
+                font-size: 188px;
+                color: #11FF00; /* Chiffres en vert */
+                margin-bottom: 5px; /* Un peu d'espace entre le chiffre et le texte */
               }
 
               .accordion {
                 width: 100%;
                 padding: 25px 30px 10px;
-                border-radius: 0;
                 margin-bottom: 40px;
-                border-bottom: 2px solid #ccc;
+                /* Suppression des traits de séparation */
               }
 
               .spacer {
                 height: 10vh;
-              }
-
-              @media (max-width: 480px) {
-                .accordion {
-                  padding: 15px 20px 8px;
-                }
-
-                .title {
-                  font-size: 20px; /* Ajustement pour mobile */
-                }
               }
             `}</style>
         </div>

@@ -2,6 +2,8 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image"; // Importer Image
+import background from '../../public/pack.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +12,6 @@ const ScrollingText = () => {
 
     useEffect(() => {
         const races = document.querySelector(".stickyTexts");
-        console.log(races.offsetWidth);
 
         function getScrollAmount() {
             let racesWidth = races.scrollWidth;
@@ -39,12 +40,41 @@ const ScrollingText = () => {
         <>
             <div className="space-50vh lightBG"></div>
             <div className="stickyTextWrapper">
-                <div className="redsquare"></div>
+                <Image
+                    src={background}
+                    alt="Background"
+                    layout="fill"
+                    objectFit="cover"
+                    className="backgroundImage"
+                />
                 <div className="stickyTexts">
                     <h2>POUR LES MONSTRES PAR LES HUMAINS</h2>
                 </div>
             </div>
             <div className="space-100vh lightBG"></div>
+
+            <style jsx>{`
+                .stickyTextWrapper {
+                    position: relative;
+                    width: 100%;
+                    height: 100vh;
+                }
+
+                .backgroundImage {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                }
+
+                .stickyTexts {
+                    position: relative;
+                    z-index: 1;
+                    /* Styles pour le texte */
+                }
+            `}</style>
         </>
     );
 };
