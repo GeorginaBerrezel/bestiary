@@ -8,7 +8,6 @@ import imgProduct from "../../public/pack.png";
 import packagingProduct from "../../public/packaging.png";
 import reelProduct from "../../public/Refresh_hd.jpg";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const SnappingScroll = () => {
@@ -34,6 +33,22 @@ const SnappingScroll = () => {
                 scrub: 1,
             }
         });
+
+        // Animation de parallaxe pour les textes de la première section
+        const textElements = gsap.utils.toArray(".panel .text");
+        textElements.forEach((text, index) => {
+            gsap.from(text, {
+                y: 50, // Fait apparaître le texte depuis le bas
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: text,
+                    start: "top 80%", // Début de l'animation quand le texte est à 80% de la hauteur de la fenêtre
+                    toggleActions: "play none none reverse", // Joue l'animation lorsque l'élément entre dans la vue
+                }
+            });
+        });
+
     }, []);
 
     return (
@@ -42,23 +57,38 @@ const SnappingScroll = () => {
                 <Product/>
             </section>
 
-
             <section className="container">
                 <div className="panel">
                     <div className="inner">
-                        <h2 className="green">REFRESH</h2>
-                        <Image src={imgProduct} alt="Image de Produit" layout="fill" objectFit="contain"/>
+                        <h2 className="green"
+                            style={{position: 'absolute', bottom: '5%', left: '10%', zIndex: '1'}}>REFRESH</h2>
+                        <Image src={reelProduct} alt="Image de Produit" layout="fill" objectFit="contain"/>
+                        <p className="text" style={{position: 'absolute', top: '20%', left: '60%', width: '30%'}}>Notre
+                            parfum extincteur spécialement conçu pour Cerbère. Offre une sensation de fraîcheur intense
+                            tout en permettant de contrôler vos flammes intérieurs.</p>
+                        <p className="text"
+                           style={{position: 'absolute', bottom: '10%', left: '70%', width: '30%'}}>Chaque Cerbère peut
+                            exprimer sa personnalité tout en facilitant sa sociabilité avec les autres. Dans les
+                            profondeurs du monde souterrain, vous êtes confronté à des températures extrêmes.</p>
                     </div>
                 </div>
 
                 <div className="panel">
                     <div className="inner">
-                        <h2> HONRIZONTAL Lorem Ipsum 4</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="text" style={{position: 'absolute', top: '5%', left: '5%', width: '30%'}}>Brosse à
+                            dent</p>
+                        <Image src={packagingProduct} alt="Image de Produit" objectFit="contain" width={500}
+                               height={500} style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)'
+                        }}/>
+                        <p className="text" style={{position: 'absolute', top: '5%', left: '60%', width: '30%'}}>Ces
+                            dimensions ont été soigneusement pensées pour une manipulation facile, assurant une
+                            application efficace sur chacune de ses trois têtes.</p>
+                        <p className="text" style={{position: 'absolute', bottom: '5%', left: '5%', width: '30%'}}>Taille parfaite</p>
+                        <p className="text" style={{position: 'absolute', bottom: '5%', right: '5%', width: '30%'}}>prix: 1500€</p>
                     </div>
                 </div>
 
@@ -127,6 +157,7 @@ const SnappingScroll = () => {
                 height: 100%;
                 display: flex;
                 background-color: #F5F5F5;
+                position: relative; /* Nécessaire pour la position absolue des éléments internes */
               }
 
               .green {
@@ -142,15 +173,17 @@ const SnappingScroll = () => {
                 padding: 20px;
                 text-align: left; /* Aligner le texte à gauche */
                 color: black; /* Changement de la couleur du texte en noir */
+                position: relative; /* Nécessaire pour que les éléments positionnés absolument soient en rapport avec cet élément */
               }
 
               h2 {
-                font-size: 2em; /* Taille du titre */
+                font-size: 140px; /* Taille du titre */
                 margin-bottom: 10px; /* Espace en dessous du titre */
+                font-weight: bolder;
               }
 
               p {
-                font-size: 1.2em; /* Taille uniforme du texte */
+                font-size: 18px; /* Taille uniforme du texte */
               }
             `}</style>
         </div>

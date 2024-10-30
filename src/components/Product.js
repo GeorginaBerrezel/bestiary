@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
-import imgProduct from '../../public/Refresh_hd.jpg'; // Assurez-vous d'avoir une image de produit à cet emplacement.
+import imgProduct from '../../public/refresh_sansfond.png'; // Assurez-vous d'avoir une image de produit à cet emplacement.
 
 const Product = () => {
     const sectionRef = useRef(null);
@@ -23,7 +23,6 @@ const Product = () => {
                 start: "top center",
                 end: "bottom center",
                 scrub: true,
-                pin: true, // Pinne la section pendant l'animation
             }
         });
 
@@ -37,7 +36,6 @@ const Product = () => {
                 start: "top center",
                 end: "bottom center",
                 scrub: true,
-                pin: true, // Pinne la section pendant l'animation
             }
         });
 
@@ -51,7 +49,6 @@ const Product = () => {
                 start: "top center",
                 end: "bottom center",
                 scrub: true,
-                pin: true, // Pinne la section pendant l'animation
             }
         });
     }, []);
@@ -104,24 +101,23 @@ const Product = () => {
 
               .middle-section {
                 position: relative; /* Nécessaire pour positionner les éléments internes */
-                height: 100vh; /* Ajuster la hauteur ici */
+                height: calc(100vh - 60px); /* Hauteur restante après les liens */
                 display: flex; /* Utiliser flexbox pour centrer le contenu */
                 justify-content: center; /* Centrer horizontalement */
                 align-items: center; /* Centrer verticalement */
                 flex-direction: column; /* Alignement vertical des éléments */
-                padding-top: 60px; /* Ajout d'un espace en haut pour le titre */
               }
 
               .title {
-                position: absolute; /* Garder le titre au-dessus de l'image */
-                top: 20px; /* Espacement du haut */
+                position: absolute; /* Positionné en haut */
+                top: 20px; /* Espace en haut */
                 left: 50%; /* Centrer horizontalement */
                 text-transform: uppercase;
                 text-align: center;
                 color: white;
                 transform: translateX(-50%); /* Ajuster le centrage */
                 font-size: 36px; /* Taille du titre */
-                width: 30%; /* Largeur du titre */
+                width: 30%;
               }
 
               .image-container {
@@ -130,8 +126,6 @@ const Product = () => {
                 width: 100%; /* Prendre toute la largeur disponible */
                 max-width: 600px; /* Largeur maximale de l'image */
                 overflow: hidden; /* Masquer les débordements */
-                margin-bottom: 40px; /* Espace en bas de l'image */
-
               }
 
               .text-block {
@@ -152,6 +146,7 @@ const Product = () => {
                 left: 80%; /* Centrer horizontalement */
                 transform: translateX(-50%); /* Ajuster le centrage */
                 width: 30%;
+
               }
             `}</style>
         </div>
