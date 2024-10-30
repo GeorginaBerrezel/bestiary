@@ -1,0 +1,54 @@
+/* styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green-fluo: #11FF00;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Helvetica', sans-serif;
+}
+
+/* Styles typographiques */
+h1 {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 140px;
+}
+
+h2 {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 70px;
+}
+
+h3 {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.subtitle {
+  font-family: 'JetBrains Mono', sans-serif;
+  font-weight: 300;
+  font-size: 20.5px;
+}
+
+.cta-secondary {
+  font-family: 'Passenger Sans', sans-serif;
+  font-weight: 900;
+  font-size: 31px;
+}
+
+.text-courant {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+/* Autres styles existants... */
