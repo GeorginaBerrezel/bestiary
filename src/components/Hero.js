@@ -40,8 +40,8 @@ const Hero = () => {
                 </div>
                 <div className="info-box">
                     <div className="text-container">
-                        <h3>SHARP</h3>
-                        <p>Conception Golems</p>
+                        <h3>REFRESH</h3>
+                        <p>Conception Cerbères</p>
                     </div>
                     <div className="icon">
                         <Image src={icon1} alt="Icon 1" width={50} height={50} />
@@ -55,11 +55,11 @@ const Hero = () => {
                 </div>
                 <div className="info-box">
                     <div className="text-container">
-                        <h3>REFRESH</h3>
-                        <p>Conception Cerbères</p>
+                        <h3>SHARP</h3>
+                        <p>Conception Harpies</p>
                     </div>
                     <div className="icon">
-                        <Image src={icon2} alt="Icon 2" width={50} height={50} />
+                        <Image src={icon3} alt="Icon 3" width={50} height={50} />
                     </div>
                 </div>
             </div>
@@ -71,10 +71,10 @@ const Hero = () => {
                 <div className="info-box">
                     <div className="text-container">
                         <h3>CARVE</h3>
-                        <p>Conception Harpies</p>
+                        <p>Conception Golems</p>
                     </div>
                     <div className="icon">
-                        <Image src={icon3} alt="Icon 3" width={50} height={50} />
+                        <Image src={icon2} alt="Icon 2" width={50} height={50} />
                     </div>
                 </div>
             </div>

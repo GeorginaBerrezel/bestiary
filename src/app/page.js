@@ -9,6 +9,7 @@ import CTARegular from "@/components/CtaRegular";
 import CTANav from "@/components/CtaNav";
 import LogoAnimation from "@/components/LogoAnimation"
 import Header from "@/components/Header";
+import Product from "@/components/Product";
 export default function Home() {
     return (
         <div className="flex flex-col items-center justify-between min-h-screen">
@@ -32,19 +33,10 @@ export default function Home() {
                 <ScrollingText />
             </div>
 
+            <Product />
 
-            {/* Section de texte */}
-            <main className="flex flex-col gap-8 items-center sm:items-start text-center sm:text-left">
-                <h1>Bienvenue dans le Bestiaire</h1>
-                <p className="text-courant">
-                    Explorez nos chimères uniques et fascinantes.
-                </p>
-            </main>
             <CTARegular text="En savoir plus" />
             <CTANav text="à propos" />
-
-
-
             <footer>
                 <Footer />
             </footer>
