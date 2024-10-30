@@ -1,17 +1,12 @@
 // pages/index.js
 import Image from "next/image";
-//import Model3D from '../components/Model3D';
 import ScrollTrigger from "../components/ScrollTrigger";
 import gif from '../../public/bestiary.gif';
 import ScrollingText from "@/components/ScrollingText";
 import Footer from "@/components/Footer";
-import CTARegular from "@/components/CtaRegular";
-import CTANav from "@/components/CtaNav";
 import LogoAnimation from "@/components/LogoAnimation"
 import Header from "@/components/Header";
-import Product from "@/components/Product";
 import SnappingScroll from "@/components/SnappingScroll";
-import Vote from "@/components/Vote";
 import Order from "@/components/Order";
 export default function Home() {
     return (
@@ -36,10 +31,7 @@ export default function Home() {
                 <ScrollingText />
             </div>
 
-
             <SnappingScroll />
-
-            <Vote />
 
             <Order />
 

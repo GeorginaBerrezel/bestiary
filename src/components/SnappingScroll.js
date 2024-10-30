@@ -4,10 +4,11 @@ import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import Product from "@/components/Product";
 import Image from "next/image";
-import imgProduct from "../../public/pack.png";
 import packagingProduct from "../../public/packaging.png";
 import reelProduct from "../../public/Refresh_hd.jpg";
 import etiquette from "../../public/close-up-refresh-etiquette.png";
+import taille from "../../public/taille-parfaite.png";
+import prix from "../../public/prix-1500.png";
 import step1 from "../../public/step1.png";
 import step2 from "../../public/step2.png";
 import step3 from "../../public/step3.png";
@@ -17,6 +18,8 @@ import description3 from "../../public/description3.png";
 import avis1 from "../../public/avis1.png";
 import avis2 from "../../public/avis2.png";
 import avis3 from "../../public/avis3.png";
+import packagingAll from "../../public/packaging-all.jpg";
+import Vote from "@/components/Vote";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -98,10 +101,18 @@ const SnappingScroll = () => {
                         <p className="text" style={{position: 'absolute', top: '5%', left: '60%', width: '30%'}}>Ces
                             dimensions ont été soigneusement pensées pour une manipulation facile, assurant une
                             application efficace sur chacune de ses trois têtes.</p>
-                        <p className="text"
-                           style={{position: 'absolute', bottom: '5%', left: '5%', width: '30%'}}>Taille parfaite</p>
-                        <p className="text"
-                           style={{position: 'absolute', bottom: '5%', right: '5%', width: '30%'}}>prix: 1500€</p>
+                        <Image src={taille} alt="Image de Produit" objectFit="contain" width={150}
+                               height={500} style={{
+                            position: 'absolute',
+                            bottom: '5%',
+                            left: '5%'
+                        }}/>
+                        <Image src={prix} alt="Image de Produit" objectFit="contain" width={100}
+                               height={500} style={{
+                            position: 'absolute',
+                            bottom: '5%',
+                            right: '10%'
+                        }}/>
                     </div>
                 </div>
 
@@ -110,9 +121,27 @@ const SnappingScroll = () => {
                         <p className="text" style={{position: 'absolute', top: '5%', left: '5%', width: '30%'}}>En 3
                             étapes</p>
                         <div className="steps-container">
-                            <Image src={step1} alt="Étape 1" objectFit="contain"/>
-                            <Image src={step2} alt="Étape 2" objectFit="contain"/>
-                            <Image src={step3} alt="Étape 3" objectFit="contain"/>
+                            <Image src={step1} alt="Étape 1" objectFit="contain" width={700}
+                                   style={{
+                                       position: 'absolute',
+                                       top: '30%',
+                                       left: '50%',
+                                       transform: 'translate(-50%, -50%)'
+                                   }}/>
+                            <Image src={step2} alt="Étape 2" objectFit="contain" width={700}
+                                   style={{
+                                       position: 'absolute',
+                                       top: '50%',
+                                       left: '50%',
+                                       transform: 'translate(-50%, -50%)'
+                                   }}/>
+                            <Image src={step3} alt="Étape 3" objectFit="contain" width={800}
+                                   style={{
+                                       position: 'absolute',
+                                       top: '85%',
+                                       left: '50%',
+                                       transform: 'translate(-50%, -50%)'
+                                   }}/>
                         </div>
                     </div>
                 </div>
@@ -159,22 +188,13 @@ const SnappingScroll = () => {
                 </div>
                 <div className="panel">
                     <div className="inner">
-                        <Image src={etiquette} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
+                        <Image src={packagingAll} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
                 </div>
 
             </section>
 
             <section>
-                <div className="panel">
-                    <div className="inner">
-                        <h2>Lorem Ipsum 6</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                </div>
+                <Vote/>
             </section>
 
             <style jsx>{`
