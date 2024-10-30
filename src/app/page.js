@@ -11,6 +11,7 @@ import LogoAnimation from "@/components/LogoAnimation"
 import Header from "@/components/Header";
 import Product from "@/components/Product";
 import SnappingScroll from "@/components/SnappingScroll";
+import Vote from "@/components/Vote";
 export default function Home() {
     return (
         <div className="flex flex-col items-center justify-between min-h-screen">
@@ -36,6 +37,8 @@ export default function Home() {
 
 
             <SnappingScroll />
+
+            <Vote />
 
             <CTARegular text="En savoir plus" />
             <CTANav text="à propos" />

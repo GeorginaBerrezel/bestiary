@@ -126,7 +126,7 @@ const SnappingScroll = () => {
                 width: 100vw;
                 height: 100%;
                 display: flex;
-                background-color: #000000;
+                background-color: #F5F5F5;
               }
 
               .green {
