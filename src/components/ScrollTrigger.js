@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, {useEffect} from "react";
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +77,8 @@ const ScrollTriggerComponent = () => {
                             <span>Technologie utilisé</span>
                         </div>
                         <div className="text">
-                            Lets you immerse yourself in whatever you’re reading, watching, or creating...
+                            Des solutions techniques de pointe, adaptées aux particularités uniques de chaque monstre,
+                            pour un soin efficace et précis.
                         </div>
                     </div>
                     <div className="accordion">
@@ -86,7 +87,7 @@ const ScrollTriggerComponent = () => {
                             <span>Matériaux adaptés</span>
                         </div>
                         <div className="text">
-                            The breakthrough M1 chip is now in Air. An 8-core CPU delivers up to 60 percent...
+                            Des matériaux sélectionnés avec soin pour leur durabilité
                         </div>
                     </div>
                     <div className="accordion">
@@ -95,7 +96,7 @@ const ScrollTriggerComponent = () => {
                             <span>Exclusif pour chaque créature</span>
                         </div>
                         <div className="text">
-                            The 12MP Ultra Wide front camera enables Center Stage, making video calls...
+                            Des produits sur-mesure, conçus pour répondre aux besoins uniques de chaque monstre
                         </div>
                     </div>
                 </div>

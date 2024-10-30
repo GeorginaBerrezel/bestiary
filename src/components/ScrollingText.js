@@ -27,7 +27,7 @@ const ScrollingText = () => {
         ScrollTrigger.create({
             trigger: ".racesWrapper", // Le conteneur parent
             start: "top 20%", // Démarrer quand le haut du conteneur est à 20% de la hauteur de la fenêtre
-            end: () => `+=${Math.abs(getScrollAmount())}`, // Fin de l'animation
+            // end: () => `+=${Math.abs(getScrollAmount())}`, // Fin de l'animation
             pin: true, // Active l'effet de pin
             animation: tween, // L'animation à jouer
             scrub: 1, // Synchronise l'animation avec le défilement

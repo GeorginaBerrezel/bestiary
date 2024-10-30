@@ -1,38 +1,63 @@
 "use client";
 
-import React from 'react';
-import Model3D from '../components/Model3D';
+import React, { useRef, useEffect } from 'react';
+import Image from 'next/image';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import img1 from '../../public/Sharp_hd.jpg';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+    const imagesRef = useRef([]); // Tableau pour les références d'images
+    const sectionRef = useRef(null); // Référence pour la section
+
+    useEffect(() => {
+        gsap.from(imagesRef.current, {
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 1, // La durée totale d'animation d'un élément
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: sectionRef.current, // Déclenche l'animation au scroll dans la section
+                start: "top 80%", // Démarre l'animation quand le haut de la section est visible à 80%
+                scrub: true, // Active le défilement progressif pour une animation fluide
+            }
+        });
+    }, []);
+
     return (
-        <div className="hero-container">
-            <div className="hero-image">
-                <Model3D path="/lilith.glb" />
+        <div className="hero-container" ref={sectionRef}>
+            <div className="hero-image" ref={el => imagesRef.current[0] = el}>
+                <Image src={img1} alt="Image 1" layout="fill" objectFit="cover" />
             </div>
-            <div className="hero-image">
-                <Model3D path="/lilith.glb" />
+            <div className="hero-image" ref={el => imagesRef.current[1] = el}>
+                <Image src={img1} alt="Image 2" layout="fill" objectFit="cover" />
             </div>
-            <div className="hero-image">
-                <Model3D path="/lilith.glb" />
+            <div className="hero-image" ref={el => imagesRef.current[2] = el}>
+                <Image src={img1} alt="Image 3" layout="fill" objectFit="cover" />
             </div>
             <style jsx>{`
               .hero-container {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
-                gap: 20px; /* Espace entre chaque modèle */
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 20px; 
                 width: 100%;
-                height: 100vh; /* Assurez-vous que le conteneur a une hauteur définie */
-                padding: 20px; /* Ajoute un padding à l'intérieur du conteneur */
-                background-color: black;
-                align-items: center; /* Centre verticalement les éléments de la grille */
-                justify-items: center; /* Centre horizontalement les éléments de la grille */
+                height: 100vh; 
+                padding: 20px; 
+                background-color: white;
+                align-items: center; 
+                justify-items: center; 
               }
 
               .hero-image {
-                position: relative; /* Nécessaire pour l'utilisation de layout="fill" */
-                height: 400px; /* Hauteur fixe pour chaque modèle */
-                width: 400px; /* Largeur fixe pour chaque modèle */
-                max-width: 100%; /* Empêche le débordement */
+                position: relative; 
+                height: 400px; 
+                width: 400px; 
+                max-width: 100%; 
+                overflow: hidden; 
+                border-radius: 10px; 
               }
             `}</style>
         </div>

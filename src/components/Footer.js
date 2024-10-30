@@ -1,6 +1,6 @@
 import React from "react";
 import logo from '../../public/bestiary-logo.svg'; // Assurez-vous que le chemin est correct
-import monsters from '../../public/monsters.svg'; // Importation correcte de l'image monsters
+import background from '../../public/background-footer.png'; // Importation correcte de l'image monsters
 import Image from "next/image";
 
 const Footer = () => {
@@ -17,8 +17,8 @@ const Footer = () => {
             </div>
             <div style={styles.logoContainer}>
                 <Image
-                    src={monsters} // Utilisation de l'import pour l'image monsters
-                    alt="Monsters"
+                    src={background} // Utilisation de l'import pour l'image monsters
+                    alt="background footer"
                     width={150}
                     height={150}
                 />
