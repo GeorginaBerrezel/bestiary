@@ -6,6 +6,8 @@ import Product from "@/components/Product";
 import Image from "next/image";
 import imgProduct from "../../public/pack.png";
 import packagingProduct from "../../public/packaging.png";
+import reelProduct from "../../public/Refresh_hd.jpg";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +48,7 @@ const SnappingScroll = () => {
                 <div className="panel">
                     <div className="inner">
                         <h2 className="green">REFRESH</h2>
-                        <Image src={imgProduct} alt="Image de Produit" layout="fill" objectFit="contain" />
+                        <Image src={imgProduct} alt="Image de Produit" layout="fill" objectFit="contain"/>
                     </div>
                 </div>
 
@@ -63,9 +65,32 @@ const SnappingScroll = () => {
 
                 <div className="panel">
                     <div className="inner">
-                        <Image src={packagingProduct} alt="Image de Produit" layout="fill" objectFit="contain" />
+                        <Image src={packagingProduct} alt="Image de Produit" layout="fill" objectFit="contain"/>
                     </div>
                 </div>
+                <div className="panel">
+                    <div className="inner">
+                        <h2> HONRIZONTAL Lorem Ipsum 4</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                        <Image src={reelProduct} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
+                </div>
+                <div className="panel">
+                    <div className="inner">
+                        <h2> HONRIZONTAL Lorem Ipsum 4</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    </div>
+                </div>
+
             </section>
 
             <section>
