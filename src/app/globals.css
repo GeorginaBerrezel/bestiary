@@ -8,6 +8,10 @@
   --green-fluo: #11FF00;
 }
 
+header {
+  opacity: 0;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -85,3 +89,39 @@ h3 {
 }
 
 /* Autres styles existants... */
+
+.stickyTextWrapper {
+  position: relative;
+}
+.stickyTexts {
+  width:fit-content;
+  display:flex;
+  flex-wrap:nowrap;
+}
+
+.stickyTexts h2 {
+  font-size:28vw;
+  flex-shrink:0;
+  padding-right:0.3em;
+  padding-left:0.3em;
+  margin:0;
+}
+
+.redsquare {
+  width: 250px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+}
+
+
+.space-50vh {
+  height:50vh;
+}
+
+.space-100vh {
+  height:20vh;
+}

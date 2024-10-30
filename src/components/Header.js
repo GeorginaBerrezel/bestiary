@@ -1,19 +1,45 @@
-import React from 'react';
-import Image from 'next/image'; // Assurez-vous d'utiliser le bon chemin pour l'importation
-import logo from '../../public/bestiary-logo.svg';
+"use client";
+
+import React, { useEffect } from "react";
+import Image from "next/image";
+import logo from "../../public/bestiary-logo.svg";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Header = () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    useEffect(() => {
+        gsap.fromTo(
+            "header",
+            { opacity: 0 },
+            {
+                opacity: 1,
+                duration: 0.5,
+                ease: "power2.inOut",
+                scrollTrigger: {
+                    trigger: ".container-animation2",
+                    start: "top top",
+                    toggleActions: "play none none reverse",
+                },
+            }
+        );
+    }, []);
+
     return (
         <header style={headerStyle}>
             <nav style={navLeftStyle}>
-                <a href="#products" style={linkStyle}>Nos produits</a>
+                <a href="#products" style={linkStyle}>
+                    Nos produits
+                </a>
             </nav>
             <div style={logoStyle}>
-                {/* Utilisation de l'image avec une taille appropriée */}
                 <Image src={logo} alt="Logo" width={100} height={100} />
             </div>
             <nav style={navRightStyle}>
-                <a href="#about" style={linkStyle}>À propos</a>
+                <a href="#about" style={linkStyle}>
+                    À propos
+                </a>
             </nav>
         </header>
     );
@@ -21,45 +47,44 @@ const Header = () => {
 
 // Styles en ligne
 const headerStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '10px 20px',
-    backgroundColor: 'transparent', // Rendre le fond transparent
-    position: 'fixed',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "10px 20px",
+    backgroundColor: "transparent",
+    position: "fixed",
     top: 0,
     left: 0,
     right: 0,
     zIndex: 1000,
-    boxShadow: 'none', // Optionnel, enlever l'ombre
+    boxShadow: "none",
 };
 
 const logoStyle = {
-    flex: '0 0 auto', // Empêche le logo de s'étirer
-    display: 'flex',
-    justifyContent: 'center', // Centre le logo
-    alignItems: 'center', // Aligne le logo verticalement
+    flex: "0 0 auto",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
 };
 
 const navLeftStyle = {
-    flex: '1', // Permet à l'élément de navigation gauche de prendre l'espace disponible
-    display: 'flex',
-    justifyContent: 'flex-start', // Aligne le texte à gauche
+    flex: "1",
+    display: "flex",
+    justifyContent: "flex-start",
 };
 
 const navRightStyle = {
-    flex: '1', // Permet à l'élément de navigation droit de prendre l'espace disponible
-    display: 'flex',
-    justifyContent: 'flex-end', // Aligne le texte à droite
+    flex: "1",
+    display: "flex",
+    justifyContent: "flex-end",
 };
 
 const linkStyle = {
-    textDecoration: 'none',
-    color: '#333', // Couleur du texte
-    fontSize: '18px', // Taille du texte
-    padding: '0 20px', // Espacement autour des liens
-    textTransform: 'uppercase', // Met le texte en majuscules
+    textDecoration: "none",
+    color: "#333",
+    fontSize: "18px",
+    padding: "0 20px",
+    textTransform: "uppercase",
 };
 
-// Exporter le composant
 export default Header;

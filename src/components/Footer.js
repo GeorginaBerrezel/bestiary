@@ -1,6 +1,6 @@
 import React from "react";
-import logo from '../../public/bestiary-logo.svg'; // Assurez-vous que le chemin est correct
-import background from '../../public/background-footer.png'; // Importation correcte de l'image monsters
+import logo from '../../public/logo-white.svg';
+import background from '../../public/background-footer.png';
 import Image from "next/image";
 
 const Footer = () => {
@@ -11,16 +11,8 @@ const Footer = () => {
                 <Image
                     src={logo}
                     alt="Bestiary Logo"
-                    width={150}
-                    height={150}
-                />
-            </div>
-            <div style={styles.logoContainer}>
-                <Image
-                    src={background} // Utilisation de l'import pour l'image monsters
-                    alt="background footer"
-                    width={150}
-                    height={150}
+                    width={550}
+                    height={550}
                 />
             </div>
 
@@ -34,9 +26,7 @@ const Footer = () => {
 
             {/* Liens de politique */}
             <div style={styles.policies}>
-                <a href="#privacy-policy" style={styles.policyLink}>Privacy Policy</a>
-                <a href="#terms" style={styles.policyLink}>Terms & Conditions</a>
-                <a href="#return-policy" style={styles.policyLink}>Return & Refund Policy</a>
+                <a href="#privacy-policy" style={styles.policyLink}>©BESTIARY - ALL RIGHTS RESERVED, 2024.</a>
             </div>
         </footer>
     );
@@ -45,13 +35,17 @@ const Footer = () => {
 // Styles en ligne pour simplifier
 const styles = {
     footer: {
+        width: "100vw", // Assure que le footer prend toute la largeur
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         textAlign: "center",
         padding: "40px 20px",
-        backgroundColor: "#fff",
         color: "#000",
+        backgroundImage: `url(${background.src})`, // Utilisation de l'image de fond
+        backgroundSize: "cover", // L'image couvre tout le footer
+        backgroundPosition: "center", // Centre l'image
+        backgroundRepeat: "no-repeat", // Empêche la répétition
     },
     logoContainer: {
         marginBottom: "20px",
@@ -66,7 +60,7 @@ const styles = {
     },
     navLink: {
         textDecoration: "none",
-        color: "#000",
+        color: "#fff", // Mettre en blanc pour une meilleure visibilité sur l'image de fond
         fontSize: "14px",
         fontWeight: "bold",
     },
@@ -75,11 +69,11 @@ const styles = {
         justifyContent: "center",
         gap: "15px",
         fontSize: "12px",
-        color: "#666",
+        color: "#fff", // Ajusté pour une bonne visibilité
     },
     policyLink: {
         textDecoration: "none",
-        color: "#666",
+        color: "#fff",
     },
 };
 
