@@ -162,7 +162,7 @@ const ScrollTriggerComponent = () => {
               }
 
               .image2 {
-                top: 50%; /* Positionnez l'image 2 au milieu */
+                top: 70%; /* Positionnez l'image 2 au milieu */
                 left: -30%; /* Positionnez à gauche */
                 transform: translateY(-50%); /* Ajuste le centrage vertical */
               }
