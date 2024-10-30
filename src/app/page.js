@@ -9,12 +9,11 @@ import Footer from "@/components/Footer";
 import CTARegular from "@/components/CtaRegular";
 import CTANav from "@/components/CtaNav";
 import Hero from "@/components/Hero";
-
+import LogoAnimation from "@/components/LogoAnimation"
 export default function Home() {
     return (
-        <div className="flex flex-col items-center justify-between min-h-screen p-8 pb-20 gap-16 sm:p-20">
-            {/* Logo */}
-
+        <div className="flex flex-col items-center justify-between min-h-screen">
+            <LogoAnimation />
 
             <div className="mb-8">
                 <Image

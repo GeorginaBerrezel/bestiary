@@ -14,6 +14,11 @@ body {
   font-family: 'Helvetica', sans-serif;
 }
 
+main {
+  margin-bottom: 100vh;
+  width: 100vw;
+}
+
 /* Styles typographiques */
 h1 {
   font-family: 'Helvetica', sans-serif;
@@ -49,6 +54,35 @@ h3 {
   font-family: 'Helvetica', sans-serif;
   font-weight: 300;
   font-size: 17px;
+}
+
+/* Ajout des styles pour l'animation du logo */
+
+
+.container-animation {
+  position: relative;
+  height: 300vh; /* Pour créer un long défilement */
+  background-color: black;
+}
+
+.container-animation2 {
+  background-color: black;
+  height: auto;
+}
+
+.stickyMask {
+  display: flex;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  mask-image: url('/medias/mask.svg'); /* Image du masque */
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: 80%; /* Taille initiale du masque */
+  background-color: white;
 }
 
 /* Autres styles existants... */

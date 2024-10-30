@@ -1,47 +1,47 @@
 "use client";
+import { useRef, useEffect } from "react";
+import Hero from "@/components/Hero";
 
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import logo from '../../public/logo-bestiary.svg'; // Remplacez par le logo souhaité
+export default function Home() {
+    const container = useRef(null);
+    const stickyMask = useRef(null);
 
-const LogoAnimation = () => {
-    const [scale, setScale] = useState(1);
-    const [lineHeight, setLineHeight] = useState(0);
-
-    const handleScroll = () => {
-        const scrollY = window.scrollY;
-        // Ajustez la logique pour contrôler l'agrandissement et la hauteur de la ligne
-        setScale(1 + scrollY / 200); // Modifiez le diviseur pour ajuster la vitesse d'agrandissement
-        setLineHeight(Math.min(scrollY, 400)); // Limitez la hauteur de la ligne
-    };
+    const initialMaskSize = 0.8;
+    const targetMaskSize = 30;
+    const easing = 0.15;
+    let easedScrollProgress = 0;
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        requestAnimationFrame(animate);
     }, []);
 
-    return (
-        <div className="flex flex-col items-center justify-center">
-            <div
-                className="relative"
-                style={{ height: lineHeight, transition: 'height 0.2s' }}
-            >
-                <div
-                    className="absolute left-0 right-0 bg-black"
-                    style={{ height: '4px', transform: `translateY(${lineHeight}px)`, transition: 'transform 0.2s' }}
-                />
-            </div>
-            <Image
-                src={logo}
-                alt="Logo"
-                width={500 * scale} // Ajustez selon vos besoins
-                height={500 * scale}
-                style={{ transition: 'transform 0.2s' }}
-            />
-        </div>
-    );
-};
+    const animate = () => {
+        const maskSizeProgress = targetMaskSize * getScrollProgress();
+        stickyMask.current.style.maskSize =
+            (initialMaskSize + maskSizeProgress) * 100 + "%";
+        requestAnimationFrame(animate);
+    };
 
-export default LogoAnimation;
+    const getScrollProgress = () => {
+        const scrollProgress =
+            stickyMask.current.offsetTop /
+            (container.current.getBoundingClientRect().height - window.innerHeight);
+        const delta = scrollProgress - easedScrollProgress;
+        easedScrollProgress += delta * easing;
+        return easedScrollProgress;
+    };
+
+    return (
+        <main className="main">
+            <div ref={container} className="container-animation">
+                <div ref={stickyMask} className="stickyMask">
+                    {/* Contenu vide ou une couleur de fond */}
+                    <div style={{ width: "100%", height: "100%", backgroundColor: "white" }}></div>
+                </div>
+            </div>
+            <div className="container-animtion2">
+                <Hero />
+            </div>
+        </main>
+    );
+}
