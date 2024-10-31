@@ -91,14 +91,14 @@ const SnappingScroll = () => {
                     <div className="inner">
                         <p className="text" style={{position: 'absolute', top: '5%', left: '5%', width: '30%'}}>Brosse à
                             dent</p>
-                        <Image src={packagingProduct} alt="Image de Produit" objectFit="contain" width={500}
-                               height={500} style={{
+                        <Image src={packagingProduct} alt="Image de Produit" objectFit="contain" width={700}
+                               height={700} style={{
                             position: 'absolute',
                             top: '50%',
                             left: '50%',
                             transform: 'translate(-50%, -50%)'
                         }}/>
-                        <p className="text" style={{position: 'absolute', top: '5%', left: '60%', width: '30%'}}>Ces
+                        <p className="text" style={{position: 'absolute', top: '5%', left: '70%', width: '25%'}}>Ces
                             dimensions ont été soigneusement pensées pour une manipulation facile, assurant une
                             application efficace sur chacune de ses trois têtes.</p>
                         <Image src={taille} alt="Image de Produit" objectFit="contain" width={150}
@@ -149,9 +149,9 @@ const SnappingScroll = () => {
                     <div className="inner">
                         <Image src={etiquette} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
                     <div className="block-description">
-                        <Image src={description1} alt="Étape 1" objectFit="contain"/>
-                        <Image src={description2} alt="Étape 1" objectFit="contain"/>
-                        <Image src={description3} alt="Étape 1" objectFit="contain"/>
+                        <Image src={description1} alt="Étape 1" objectFit="contain" style={{ marginBottom: '1rem' }}/>
+                        <Image src={description2} alt="Étape 1" objectFit="contain" style={{ marginBottom: '1rem' }}/>
+                        <Image src={description3} alt="Étape 1" objectFit="contain" style={{ marginBottom: '1rem' }}/>
                     </div>
 
                 </div>
@@ -163,6 +163,7 @@ const SnappingScroll = () => {
                         <div className="block-description">
                             <Image src={avis1} alt="Étape 1" objectFit="contain" style={{
                                 width: '30%',
+                                marginBottom:'10rem',
                                 position: 'absolute',
                                 top: '20%',
                                 left: '20%',
@@ -249,9 +250,12 @@ const SnappingScroll = () => {
               }
 
               .block-description {
-                display: block;
+                display: grid;
+                justify-content: space-between;
                 margin-right: 5rem;
+                margin-left: 2rem;
               }
+              
             `}</style>
         </div>
     );

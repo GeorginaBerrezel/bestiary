@@ -3,8 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
-import orderImage from '../../public/pack.png';
-import waterImage from '../../public/fondu-image-order.png';
+import orderImage from '../../public/refresh_sansfond.png';
 import CTARegular from "@/components/CtaRegular";
 
 const Order = () => {
@@ -45,13 +44,6 @@ const Order = () => {
                         layout="fill"
                         objectFit="cover"
                         className="image"
-                    />
-                    <Image
-                        src={waterImage}
-                        alt="Effet de mélange"
-                        layout="fill"
-                        objectFit="cover"
-                        className="water-effect"
                     />
                 </div>
             </div>

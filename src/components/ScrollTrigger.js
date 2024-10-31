@@ -86,7 +86,7 @@ const ScrollTriggerComponent = () => {
                     <div className="accordion" ref={el => accordionsRef.current[0] = el}>
                         <div className="title">
                             <h2 className="title-number">01</h2>
-                            <p>Technologie utilisée</p>
+                            <p>Technologie optimisée</p>
                         </div>
                     </div>
                     <div className="accordion" ref={el => accordionsRef.current[1] = el}>
@@ -98,7 +98,7 @@ const ScrollTriggerComponent = () => {
                     <div className="accordion" ref={el => accordionsRef.current[2] = el}>
                         <div className="title">
                             <h2 className="title-number">03</h2>
-                            <p>Exclusif pour chaque créature</p>
+                            <p>Conçu pour chaque créature</p>
                         </div>
                     </div>
                 </div>
