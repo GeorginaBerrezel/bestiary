@@ -17,8 +17,8 @@ export default function Home() {
                 <Image
                     src={gifAnimaux} // Assurez-vous que le chemin du fichier est correct
                     alt="Bestiary gif"
-                    width={600}
-                    height={600}
+                    width={800}
+                    height={800}
                 />
             </div>
             <LogoAnimation />

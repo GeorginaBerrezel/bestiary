@@ -12,14 +12,16 @@ const Header = () => {
     useEffect(() => {
         gsap.fromTo(
             "header",
-            { opacity: 0 },
+            { opacity: 1, y: 0 },
             {
-                opacity: 1,
+                opacity: 0,
+                y: -50, // Translate le header vers le haut
                 duration: 0.5,
                 ease: "power2.inOut",
                 scrollTrigger: {
-                    trigger: ".container-animation2",
-                    start: "top top",
+                    trigger: ".product-container", // Déclenchement lorsque la .product-container apparaît
+                    start: "top center",
+                    end: "bottom center",
                     toggleActions: "play none none reverse",
                 },
             }
@@ -58,6 +60,7 @@ const headerStyle = {
     right: 0,
     zIndex: 1000,
     boxShadow: "none",
+    transition: "opacity 0.5s, transform 0.5s",
 };
 
 const logoStyle = {

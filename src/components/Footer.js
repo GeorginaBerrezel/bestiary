@@ -17,12 +17,6 @@ const Footer = () => {
             </div>
 
             {/* Menu de navigation */}
-            <nav style={styles.nav}>
-                <a href="#our-story" style={styles.navLink}>Our Story</a>
-                <a href="#collection" style={styles.navLink}>Collection</a>
-                <a href="#business" style={styles.navLink}>Business</a>
-                <a href="#contact-us" style={styles.navLink}>Contact Us</a>
-            </nav>
 
             {/* Liens de politique */}
             <div style={styles.policies}>
