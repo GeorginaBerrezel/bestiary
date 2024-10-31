@@ -48,59 +48,68 @@ const Order = () => {
                 </div>
             </div>
             <style jsx>{`
-                .order-container {
-                    display: flex;
-                    height: 100vh;
-                    width: 100vw;
-                    position: relative;
-                    background-color: black;
-                    color: white;
-                }
-                .text-section {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
-                    padding: 20px;
-                    z-index: 10;
-                    width: 50%;
-                }
-                .title {
-                    font-size: 36px;
-                }
-                .subtitle {
-                    font-size: 20px;
-                    margin-top: 10px;
-                    margin-bottom: 3rem;
-                    width: 50%;
-                }
-                .image-section {
-                    position: relative;
-                    height: 100%;
-                    width: 50%;
-                }
-                .image-container {
-                    position: relative;
-                    width: 80%;
-                    height: 80%;
-                    overflow: hidden;
-                }
-                .image {
-                    position: relative;
-                    z-index: 1;
-                    pointer-events: none; /* Pour éviter les interférences avec le hover */
-                }
-                .water-effect {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    opacity: 0;
-                    z-index: 2;
-                    transition: opacity 0.5s ease;
-                }
-                .image-container:hover .water-effect {
-                    opacity: 1;
-                }
+              .order-container {
+                display: flex;
+                height: 100vh;
+                width: 100vw;
+                position: relative;
+                background-color: black;
+                color: white;
+              }
+
+              .text-section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 20px;
+                margin-left: 8rem;
+                z-index: 10;
+                width: 50%;
+              }
+
+              .title {
+                font-size: 36px;
+              }
+
+              .subtitle {
+                font-size: 20px;
+                margin-top: 10px;
+                margin-bottom: 3rem;
+                width: 50%;
+              }
+
+              .image-section {
+                position: relative;
+                height: 100%;
+                width: 50%;
+              }
+
+              .image-container {
+                position: relative;
+                width: 80%;
+                height: 80%;
+                overflow: hidden;
+              }
+
+              .image {
+                position: relative;
+                z-index: 1;
+                pointer-events: none; /* Pour éviter les interférences avec le hover */
+              }
+
+              .water-effect {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                z-index: 2;
+                transition: opacity 0.5s ease;
+              }
+
+              .image-container:hover .water-effect {
+                opacity: 1;
+              }
             `}</style>
         </div>
     );
