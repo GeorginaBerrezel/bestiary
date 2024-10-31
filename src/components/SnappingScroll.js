@@ -171,7 +171,7 @@ const SnappingScroll = () => {
                             <Image src={avis2} alt="Étape 1" objectFit="contain" style={{
                                 width: '30%',
                                 position: 'absolute',
-                                top: '40%',
+                                top: '45%',
                                 left: '50%',
                                 transform: 'translate(-50%, -50%)'
                             }}/>

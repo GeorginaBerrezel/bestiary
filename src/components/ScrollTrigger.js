@@ -3,8 +3,9 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import image1 from '../../public/pack.png';
-import image2 from '../../public/pack.png';
+import image1 from '../../public/carv_sansfond.png';
+import image2 from '../../public/monsters-frame.png';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,13 +72,13 @@ const ScrollTriggerComponent = () => {
                     </div>
                     {/* Image 1 positionnée à droite */}
                     <div ref={image1Ref} className="parallax-image image1">
-                        <Image src={image1} alt="Image 1" width={800} height={800} />
+                        <Image src={image1} alt="Image 1" width={700} height={700} />
                     </div>
                 </div>
 
                 {/* Image 2 positionnée à gauche */}
                 <div ref={image2Ref} className="parallax-image image2">
-                    <Image src={image2} alt="Image 2" width={800} height={800} />
+                    <Image src={image2} alt="Image 2" width={500} height={500} />
                 </div>
 
                 <div className="accordions">
@@ -120,6 +121,7 @@ const ScrollTriggerComponent = () => {
               .intro {
                 text-align: left;
                 padding: 20px;
+                width: 100%;
               }
 
               .intro h2 {
@@ -128,6 +130,7 @@ const ScrollTriggerComponent = () => {
                 text-align: center;
                 margin-bottom: 10px;
                 color: #000;
+                width: 600px;
               }
 
               .intro-text {
@@ -155,14 +158,14 @@ const ScrollTriggerComponent = () => {
               }
 
               .image1 {
-                top: 0%; /* Positionnez l'image 1 en haut */
+                top: 10%; /* Positionnez l'image 1 en haut */
                 left: 40%; /* Positionnez à droite */
                 z-index: -1;
               }
 
               .image2 {
-                top: 70%; /* Positionnez l'image 2 au milieu */
-                left: -30%; /* Positionnez à gauche */
+                top: 90%; /* Positionnez l'image 2 au milieu */
+                left: -20%; /* Positionnez à gauche */
                 transform: translateY(-50%); /* Ajuste le centrage vertical */
               }
 
