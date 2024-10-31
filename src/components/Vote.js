@@ -42,8 +42,8 @@ const Vote = () => {
 
     return (
         <div className="vote-container">
-            <h1>Vote pour QUI SERA
-                LE <span className="green">prochain produit</span>
+            <h1>VOTE POUR QUI SERA
+                LE <span className="green">PROCHAIN</span> PRODUIT
             </h1>
 
             <div className="image-container">
@@ -78,6 +78,7 @@ const Vote = () => {
               h1 {
                 font-size: 2rem;
                 margin-bottom: 20px;
+                width: 30%;
               }
 
               .green {

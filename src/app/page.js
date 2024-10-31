@@ -2,6 +2,7 @@
 import Image from "next/image";
 import ScrollTrigger from "../components/ScrollTrigger";
 import gif from '../../public/bestiary.gif';
+import gifAnimaux from '../../public/MONSTRES.gif'
 import ScrollingText from "@/components/ScrollingText";
 import Footer from "@/components/Footer";
 import LogoAnimation from "@/components/LogoAnimation"
@@ -14,10 +15,10 @@ export default function Home() {
             {/* Ajout du GIF */}
             <div>
                 <Image
-                    src={gif} // Assurez-vous que le chemin du fichier est correct
+                    src={gifAnimaux} // Assurez-vous que le chemin du fichier est correct
                     alt="Bestiary gif"
-                    width={700}
-                    height={700}
+                    width={600}
+                    height={600}
                 />
             </div>
             <LogoAnimation />
