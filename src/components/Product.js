@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import React, {useEffect, useRef} from 'react';
+import {gsap} from 'gsap';
 import Image from 'next/image';
 import imgProduct from '../../public/refresh_sansfond.png'; // Assurez-vous d'avoir une image de produit à cet emplacement.
 
@@ -61,12 +61,19 @@ const Product = () => {
                 <a href="#" className="link white">Ethique</a>
             </div>
             <div className="middle-section">
-                <h1 ref={titleRef} className="title">L’essentiel, pour une hygiène de vie <span className="green">optimisée.</span></h1>
+                <h1 ref={titleRef} className="title">L’essentiel, pour une hygiène de vie <span
+                    className="green">optimisée.</span></h1>
                 <div className="image-container">
-                    <Image src={imgProduct} alt="Image de Produit" layout="fill" objectFit="contain" />
+                    <Image src={imgProduct} alt="Image de Produit" layout="fill"
+                           style={{objectFit: 'cover'}} // remplace objectFit
+                    />
                 </div>
-                <div ref={textBlock1Ref} className="text-block block1">Nous avons conçu une gamme de <span className="green">trois produits</span> essentiels, formulés pour chaque créature</div>
-                <div ref={textBlock2Ref} className="text-block block2">Pas de promesses exagérées, pas de superflu. Des solutions concrètes pour <span className="green">répondre aux besoins spécifiques de chacun.</span></div>
+                <div ref={textBlock1Ref} className="text-block block1">Nous avons conçu une gamme de <span
+                    className="green">trois produits</span> essentiels, formulés pour chaque créature
+                </div>
+                <div ref={textBlock2Ref} className="text-block block2">Pas de promesses exagérées, pas de superflu. Des
+                    solutions concrètes pour <span className="green">répondre aux besoins spécifiques de chacun.</span>
+                </div>
             </div>
             <style jsx>{`
               .product-container {
