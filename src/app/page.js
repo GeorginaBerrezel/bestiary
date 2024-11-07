@@ -1,27 +1,20 @@
-// pages/index.js
-import Image from "next/image";
+"use client";
+
+import { useEffect } from "react";
+import gsap from "gsap";
+import Loader from "@/components/Loader";
 import ScrollTrigger from "../components/ScrollTrigger";
-import gif from '../../public/bestiary.gif';
-import gifAnimaux from '../../public/MONSTRES.gif'
 import ScrollingText from "@/components/ScrollingText";
 import Footer from "@/components/Footer";
-import LogoAnimation from "@/components/LogoAnimation"
+import LogoAnimation from "@/components/LogoAnimation";
 import Header from "@/components/Header";
 import SnappingScroll from "@/components/SnappingScroll";
 import Order from "@/components/Order";
+
 export default function Home() {
     return (
-        <div className="flex flex-col items-center justify-between min-h-screen">
-            {/* Ajout du GIF */}
-            <div>
-                <Image
-                    src={gifAnimaux} // Assurez-vous que le chemin du fichier est correct
-                    width={500}
-                    height={300}
-                    unoptimized
-                    alt="Monstres animation"
-                />
-            </div>
+        <div className="relative flex flex-col items-center justify-between min-h-screen">
+            <Loader />
             <LogoAnimation />
             <Header />
 

@@ -61,8 +61,6 @@ h3 {
 }
 
 /* Ajout des styles pour l'animation du logo */
-
-
 .container-animation {
   position: relative;
   height: 300vh; /* Pour créer un long défilement */
@@ -91,22 +89,22 @@ h3 {
 }
 
 /* Autres styles existants... */
-
 .stickyTextWrapper {
   position: relative;
 }
+
 .stickyTexts {
-  width:fit-content;
-  display:flex;
-  flex-wrap:nowrap;
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .stickyTexts h2 {
-  font-size:28vw;
-  flex-shrink:0;
-  padding-right:0.3em;
-  padding-left:0.3em;
-  margin:0;
+  font-size: 28vw;
+  flex-shrink: 0;
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+  margin: 0;
 }
 
 .redsquare {
@@ -119,11 +117,36 @@ h3 {
   background-color: red;
 }
 
-
 .space-50vh {
-  height:50vh;
+  height: 50vh;
 }
 
 .space-100vh {
-  height:20vh;
+  height: 20vh;
+}
+
+/* Assure que le loader couvre toute la page */
+.loader-container {
+  background-color: white;  /* Fond de la page de chargement */
+  position: fixed;  /* Fixe la position du loader à la page */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;  /* Prendre toute la largeur de la fenêtre */
+  height: 100vh;  /* Prendre toute la hauteur de la fenêtre */
+  z-index: 9999;  /* Garantir que l'élément est bien au-dessus des autres éléments */
+}
+
+/* Assurer que l'image reste centrée et bien redimensionnée */
+.loader-gif {
+  display: block;
+  opacity: 0;  /* Commence invisible, puis s'affiche grâce à l'animation */
+  position: absolute;
+  top: 50%;  /* Centrer verticalement */
+  left: 50%;  /* Centrer horizontalement */
+  transform: translate(-50%, -50%);  /* Centrer parfaitement */
 }

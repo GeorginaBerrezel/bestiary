@@ -84,7 +84,7 @@ const navRightStyle = {
 
 const linkStyle = {
     textDecoration: "none",
-    color: "#333",
+    color: "#000000",
     fontSize: "18px",
     padding: "0 20px",
     textTransform: "uppercase",

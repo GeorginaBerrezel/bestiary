@@ -6,13 +6,11 @@ import Image from "next/image";
 import image1 from '../../public/carv_sansfond.png';
 import image2 from '../../public/monsters-frame.png';
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollTriggerComponent = () => {
     const image1Ref = useRef(null);
     const image2Ref = useRef(null);
-    const accordionsRef = useRef([]); // Références pour les accordions
 
     useEffect(() => {
         // Animation de parallaxe pour les images
@@ -36,8 +34,8 @@ const ScrollTriggerComponent = () => {
             },
         });
 
-        // Animation des accordions qui arrivent les uns après les autres
-        gsap.utils.toArray(".accordion").forEach((accordion, index) => {
+        // Animation des accordions qui arrivent de manière séquentielle
+        gsap.utils.toArray(".accordion").forEach((accordion) => {
             gsap.fromTo(
                 accordion,
                 { opacity: 0, y: 50 },
@@ -48,7 +46,7 @@ const ScrollTriggerComponent = () => {
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: accordion,
-                        start: "top 80%", // Lancement de l'animation lorsqu'il atteint 80% de la fenêtre
+                        start: "top 80%",
                         end: "bottom top",
                         scrub: true,
                     },
@@ -62,7 +60,6 @@ const ScrollTriggerComponent = () => {
             <div id="content">
                 <div className="intro">
                     <h2>L'inclusion commence par la manière dont nous parlons au Monde</h2>
-                    {/* Nouvelle div pour le paragraphe */}
                     <div className="intro-text">
                         <p>
                             Bestiary est une marque engagée qui valorise l'inclusion des monstres au sein de notre société.
@@ -70,32 +67,29 @@ const ScrollTriggerComponent = () => {
                             mérite d'être reconnu et valorisé.
                         </p>
                     </div>
-                    {/* Image 1 positionnée à droite */}
                     <div ref={image1Ref} className="parallax-image image1">
                         <Image src={image1} alt="Image 1" width={700} height={700} />
                     </div>
                 </div>
 
-                {/* Image 2 positionnée à gauche */}
                 <div ref={image2Ref} className="parallax-image image2">
                     <Image src={image2} alt="Image 2" width={500} height={500} />
                 </div>
 
                 <div className="accordions">
-                    {/* Accordions */}
-                    <div className="accordion" ref={el => accordionsRef.current[0] = el}>
+                    <div className="accordion">
                         <div className="title">
                             <h2 className="title-number">01</h2>
                             <p>Technologie optimisée</p>
                         </div>
                     </div>
-                    <div className="accordion" ref={el => accordionsRef.current[1] = el}>
+                    <div className="accordion">
                         <div className="title">
                             <h2 className="title-number">02</h2>
                             <p>Matériaux adaptés</p>
                         </div>
                     </div>
-                    <div className="accordion" ref={el => accordionsRef.current[2] = el}>
+                    <div className="accordion">
                         <div className="title">
                             <h2 className="title-number">03</h2>
                             <p>Conçu pour chaque créature</p>
@@ -113,9 +107,9 @@ const ScrollTriggerComponent = () => {
               }
 
               #content {
-                width: 60%; /* Réduit la largeur du conteneur */
-                margin: 0 auto; /* Centre le contenu */
-                position: relative; /* Position relative pour que les enfants absolus soient positionnés correctement */
+                width: 60%;
+                margin: 0 auto;
+                position: relative;
               }
 
               .intro {
@@ -134,10 +128,9 @@ const ScrollTriggerComponent = () => {
               }
 
               .intro-text {
-                width: 50%; /* Largeur à 50% pour le paragraphe */
-                text-align: left; /* Alignement à gauche */
+                width: 50%;
+                text-align: left;
                 margin-top: 5rem;
-                // margin: 0 auto; /* Centre horizontalement */
               }
 
               .intro-text p {
@@ -145,63 +138,51 @@ const ScrollTriggerComponent = () => {
                 color: rgba(0, 0, 0, 0.7);
               }
 
-              .parallax-images {
-                position: relative; /* Position relative pour le conteneur d'images */
-                height: 400px; /* Ajustez la hauteur selon vos besoins */
-                overflow: hidden; /* Assurez-vous que les images restent à l'intérieur */
-              }
-
               .parallax-image {
-                position: absolute; /* Position absolue pour chaque image */
+                position: absolute;
                 width: 800px;
                 height: 800px;
               }
 
               .image1 {
-                top: 10%; /* Positionnez l'image 1 en haut */
-                left: 40%; /* Positionnez à droite */
+                top: 10%;
+                left: 40%;
                 z-index: -1;
               }
 
               .image2 {
-                top: 90%; /* Positionnez l'image 2 au milieu */
-                left: -20%; /* Positionnez à gauche */
-                transform: translateY(-50%); /* Ajuste le centrage vertical */
+                top: 90%;
+                left: -20%;
+                transform: translateY(-50%);
               }
 
               .accordions {
-                width: 100%; /* Prend toute la largeur du conteneur */
+                width: 100%;
                 position: relative;
-                right: 0;
                 display: flex;
                 flex-direction: column;
-                align-items: center; /* Centre les accordions */
+                align-items: center;
                 padding-bottom: 20vh;
               }
 
               .title {
-                font-size: 24px; /* Ajusté pour un texte plus petit */
+                font-size: 24px;
                 line-height: 1.1;
-                text-align: center; /* Centre le texte des titres */
-                padding: 10px; /* Un peu d'espace autour du texte */
+                text-align: center;
+                padding: 10px;
               }
 
               .title-number {
                 font-weight: bold;
                 font-size: 188px;
-                color: #11FF00; /* Chiffres en vert */
-                margin-bottom: 5px; /* Un peu d'espace entre le chiffre et le texte */
+                color: #11FF00;
+                margin-bottom: 5px;
               }
 
               .accordion {
                 width: 100%;
                 padding: 25px 30px 10px;
                 margin-bottom: 40px;
-                /* Suppression des traits de séparation */
-              }
-
-              .spacer {
-                height: 10vh;
               }
             `}</style>
         </div>
