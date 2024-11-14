@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import gsap from "gsap";
-import Image from "next/image";
+import Image from "next/image";  // Importation du composant Image
 
 export default function Loader() {
     useEffect(() => {
@@ -15,14 +15,14 @@ export default function Loader() {
         tlLoader
             .fromTo(
                 ".loader-gif",  // Cible l'élément avec la classe 'loader-gif'
-                { opacity: 0 },  // Départ de l'animation : invisibilité
-                { opacity: 1, duration: 1.5, ease: "Back.easeInOut" }  // Durée de 1.5 secondes pour une apparition rapide
+                { opacity: 1 },
+                { opacity: 1, duration: 3, ease: "Back.easeInOut" }
             )
             .to(".loader-container", {
                 autoAlpha: 0,
-                scale: 1,
-                y: -100,
-                duration: 0.5,  // Durée de l'animation de disparition du loader (0.5 seconde)
+                //scale: 1,
+                //y: -100,
+                duration: 0.5,
                 ease: "Back.easeIn",
                 onComplete: () => {
                     console.log("Loader fade-out completed");

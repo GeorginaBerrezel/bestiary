@@ -7,9 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import img1 from '../../public/Refresh-ombrecerbere.png';
 import img2 from '../../public/sharp_ombreharpie_illu.png';
 import img3 from '../../public/carv_ombregolem_illu.png';
-import icon1 from '../../public/refresh-icon.svg'; // Assurez-vous d'avoir un SVG dans le bon chemin.
-import icon2 from '../../public/sharp-icon.svg'; // Assurez-vous d'avoir un SVG dans le bon chemin.
-import icon3 from '../../public/carve-icon.svg'; // Assurez-vous d'avoir un SVG dans le bon chemin.
+import icon1 from '../../public/refresh-icon.svg';
+import icon2 from '../../public/sharp-icon.svg';
+import icon3 from '../../public/carve-icon.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,13 +20,13 @@ const Hero = () => {
     useEffect(() => {
         gsap.from(imagesRef.current, {
             opacity: 0,
-            y: 50,
-            stagger: 0.2,
-            duration: 1, // La durée totale d'animation d'un élément
-            ease: "power2.out",
+            // y: 50,
+            stagger: 0.3, // Augmenter le décalage entre les éléments
+            duration: 1,  // Augmenter la durée d'animation pour ralentir
+            ease: "power1.out", // Utiliser un easing plus progressif
             scrollTrigger: {
                 trigger: sectionRef.current, // Déclenche l'animation au scroll dans la section
-                start: "top 80%", // Démarre l'animation quand le haut de la section est visible à 80%
+                start: "top 100%", // Démarre l'animation quand le haut de la section est visible à 50%
                 scrub: true, // Active le défilement progressif pour une animation fluide
             }
         });
@@ -88,14 +88,14 @@ const Hero = () => {
                 height: 100vh;
                 padding: 20px;
                 background-color: #F5F5F5;
-                align-items: flex-start; /* Align items at the top of each grid cell */
+                align-items: flex-start;
                 justify-items: center;
               }
 
               .hero-block {
                 display: flex;
-                flex-direction: column; /* Aligner hero-image et info-box en colonne */
-                align-items: center; /* Centrer horizontalement */
+                flex-direction: column;
+                align-items: center;
               }
 
               .hero-image {
@@ -108,38 +108,56 @@ const Hero = () => {
               }
 
               .info-box {
-                border: 1px solid #000000; /* Bordure du cadre */
-                padding: 10px; /* Espacement interne */
-                background-color: #fff; /* Fond blanc pour le cadre */
-                display: flex; /* Maintenir l'info-box en flex */
-                justify-content: space-between; /* Espace entre le texte et l'icône */
-                align-items: center; /* Alignement vertical centré */
-                width: 100%; /* Prendre toute la largeur disponible */
-                box-sizing: border-box; /* Inclure la bordure et le padding dans la largeur totale */
+                border: 1px solid #000000;
+                padding: 10px;
+                background-color: #fff;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                box-sizing: border-box;
                 margin-top: 1rem;
               }
 
               .text-container {
-                display: flex; /* Flex pour aligner le titre et le sous-titre */
-                flex-direction: column; /* Empiler le titre et le sous-titre */
+                display: flex;
+                flex-direction: column;
               }
 
               .info-box h3 {
-                margin: 0; /* Aucune marge */
-                font-size: 30px; /* Taille de police pour le titre */
-                font-family: 'Helvetica'; /* Appliquer la police JetBrains Mono */
+                margin: 0;
+                font-size: 30px;
+                font-family: 'Helvetica';
               }
 
               .info-box p {
-                margin: 0; /* Aucune marge */
-                font-size: 12px; /* Taille de police pour le sous-titre */
-                color: black; /* Couleur pour le sous-titre */
-                font-family: 'JetBrains Mono', monospace; /* Appliquer la police JetBrains Mono */
+                margin: 0;
+                font-size: 12px;
+                color: black;
+                font-family: 'JetBrains Mono', monospace;
               }
 
               .icon {
-                display: flex; /* Flex pour centrer l'icône */
-                align-items: center; /* Centrage vertical */
+                display: flex;
+                align-items: center;
+              }
+
+              /* Responsive */
+              @media (max-width: 1024px) {
+                .hero-container {
+                  grid-template-columns: repeat(2, 1fr);
+                }
+              }
+
+              @media (max-width: 768px) {
+                .hero-container {
+                  grid-template-columns: 1fr;
+                  height: auto; /* Ajuste la hauteur pour que la grille s'adapte mieux */
+                }
+
+                .hero-image {
+                  height: 300px; /* Réduit la hauteur des images pour mieux s'adapter */
+                }
               }
             `}</style>
         </div>

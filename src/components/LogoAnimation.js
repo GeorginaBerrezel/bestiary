@@ -9,7 +9,7 @@ export default function Home() {
     const initialMaskSize = 0.8;
     const targetMaskSize = 30;
     const easing = 0.15;
-    let easedScrollProgress = 0;
+        let easedScrollProgress = 0;
 
     useEffect(() => {
         requestAnimationFrame(animate);
@@ -18,7 +18,7 @@ export default function Home() {
     const animate = () => {
         const maskSizeProgress = targetMaskSize * getScrollProgress();
         stickyMask.current.style.maskSize =
-            (initialMaskSize + maskSizeProgress) * 100 + "%";
+            (initialMaskSize + maskSizeProgress) * 60 + "%";
         requestAnimationFrame(animate);
     };
 
