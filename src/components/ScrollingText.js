@@ -40,7 +40,7 @@ const ScrollingText = () => {
 
     return (
         <>
-            <div className="space-50vh lightBG"></div>
+        {/*<div className="space-50vh lightBG"></div>*/}
             <div className="stickyTextWrapper" ref={wrapperRef}>
                 <Image
                     src={background}
@@ -49,16 +49,16 @@ const ScrollingText = () => {
                     objectFit="cover"
                     className="backgroundImage"
                 />
-                <div className="stickyTexts" ref={textRef}>
+                <div className="stickyTexts" ref={textRef} >
                     <h2>POUR LES MONSTRES PAR LES HUMAINS</h2>
                 </div>
             </div>
-            <div className="space-100vh lightBG"></div>
+        {/*<div className="space-100vh lightBG"></div>*/}
 
             <style jsx>{`
-              .space-50vh,
+              //.space-50vh,
               .space-100vh {
-                height: 50vh;
+                //height: 50vh;
                 background-color: #f0f0f0;
               }
 

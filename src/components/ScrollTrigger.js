@@ -140,7 +140,7 @@ const ScrollTriggerComponent = () => {
 
               .parallax-image {
                 position: absolute;
-                width: 800px;
+                //width: 800px;
                 height: 800px;
               }
 

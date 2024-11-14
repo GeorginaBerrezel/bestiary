@@ -191,7 +191,6 @@ const SnappingScroll = () => {
                     <div className="inner">
                         <Image src={packagingAll} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
                 </div>
-
             </section>
 
             <section>
@@ -202,6 +201,7 @@ const SnappingScroll = () => {
               section {
                 height: 100vh;
                 width: 100vw;
+                background-color: black;
               }
 
               .container {
@@ -213,6 +213,9 @@ const SnappingScroll = () => {
                 overflow: hidden;
                 color: white;
                 background-color: black;
+                box-sizing: border-box;
+                //width: 100% !important;
+                max-width: 100% !important;
               }
 
               .panel {
