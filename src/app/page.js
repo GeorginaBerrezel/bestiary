@@ -14,9 +14,8 @@ import Order from "@/components/Order";
 export default function Home() {
     return (
         <div className="relative flex flex-col items-center justify-between min-h-screen">
-{/*
             <Loader />
-*/}
+
             <LogoAnimation />
             <Header />
 
