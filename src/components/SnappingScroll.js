@@ -7,11 +7,9 @@ import Image from "next/image";
 import packagingProduct from "../../public/packaging.png";
 import reelProduct from "../../public/Refresh_hd.jpg";
 import etiquette from "../../public/close-up-refresh-etiquette.png";
-import taille from "../../public/taille-parfaite.png";
-import prix from "../../public/prix-1500.png";
-import step1 from "../../public/step1.png";
-import step2 from "../../public/step2.png";
-import step3 from "../../public/step3.png";
+import step1 from "../../public/step1-refresh.png";
+import step2 from "../../public/step2-refresh.png";
+import step3 from "../../public/step3-refresh.png";
 import description1 from "../../public/description1.png";
 import description2 from "../../public/description2.png";
 import description3 from "../../public/description3.png";
@@ -101,18 +99,39 @@ const SnappingScroll = () => {
                         <p className="text" style={{position: 'absolute', top: '5%', left: '70%', width: '25%'}}>Ces
                             dimensions ont été soigneusement pensées pour une manipulation facile, assurant une
                             application efficace sur chacune de ses trois têtes.</p>
-                        <Image src={taille} alt="Image de Produit" objectFit="contain" width={150}
-                               height={500} style={{
+
+                        <div className="detail-product"
+                             style={{position: 'absolute', width: '325px', bottom: '5%', left: '5%', fontSize: '18px'}}>
+                            <table style={{width: '100%'}}>
+                                <tbody>
+                                <tr>
+                                    <td style={{padding: '5px'}}><strong>Taille parfaites</strong></td>
+                                </tr>
+                                <tr style={{borderBottom: '1px solid black'}}>
+                                    <td style={{padding: '5px'}}>Hauteur :</td>
+                                    <td style={{padding: '5px', textAlign: 'right'}}>45CM</td>
+                                </tr>
+                                <tr style={{borderBottom: '1px solid black'}}>
+                                    <td style={{padding: '5px'}}>Diamètre :</td>
+                                    <td style={{padding: '5px', textAlign: 'right'}}>18CM</td>
+                                </tr>
+                                <tr>
+                                    <td style={{padding: '5px'}}>Capacité :</td>
+                                    <td style={{padding: '5px', textAlign: 'right'}}>3L</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <p className="text" style={{
                             position: 'absolute',
                             bottom: '5%',
-                            left: '5%'
-                        }}/>
-                        <Image src={prix} alt="Image de Produit" objectFit="contain" width={100}
-                               height={500} style={{
-                            position: 'absolute',
-                            bottom: '5%',
-                            right: '10%'
-                        }}/>
+                            right: '10%',
+                            border: '1px solid black',
+                            padding: '5px'
+                        }}>Prix : 1 500 GEMMES</p>
+
                     </div>
                 </div>
 
@@ -121,27 +140,83 @@ const SnappingScroll = () => {
                         <p className="text" style={{position: 'absolute', top: '5%', left: '5%', width: '30%'}}>En 3
                             étapes</p>
                         <div className="steps-container">
-                            <Image src={step1} alt="Étape 1" objectFit="contain" width={700}
-                                   style={{
-                                       position: 'absolute',
-                                       top: '30%',
-                                       left: '50%',
-                                       transform: 'translate(-50%, -50%)'
-                                   }}/>
-                            <Image src={step2} alt="Étape 2" objectFit="contain" width={700}
+                            <div className="text" style={{
+                                position: 'absolute',
+                                top: '30%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '1rem',
+                                textAlign: 'left',
+                                maxWidth: '80%',
+                                padding: '1rem',
+
+                            }}>
+                                <Image src={step1} alt="Étape 1" objectFit="contain" width={100} height={100}
+                                       style={{flexShrink: 0}}/>
+                                <h2 className="green" style={{margin: 0}}>01</h2>
+                                <p style={{margin: 0}}>Utilisez Refresh quotidiennement, de préférence le matin, pour
+                                    une sensation de
+                                    fraîcheur qui dure toute la journée.</p>
+                            </div>
+
+                            <div className="text" style={{
+                                position: 'absolute',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '1rem',
+                                textAlign: 'left',
+                                maxWidth: '80%',
+                                padding: '1rem',
+
+                            }}>
+                                <h2 className="green" style={{margin: 0}}>02</h2>
+                                <p style={{margin: 0}}>Gardez le flacon à environ 30 cm de chaque tête et pulvérisez
+                                    uniformément en appuyant sur la pompe à ballon avec une de vos pattes.</p>
+                                <Image src={step2} alt="Étape 1" objectFit="contain" width={100} height={100}
+                                       style={{flexShrink: 0}}/>
+                            </div>
+
+                            {/*  <Image src={step2} alt="Étape 2" objectFit="contain" width={700}
                                    style={{
                                        position: 'absolute',
                                        top: '50%',
                                        left: '50%',
                                        transform: 'translate(-50%, -50%)'
-                                   }}/>
-                            <Image src={step3} alt="Étape 3" objectFit="contain" width={800}
+                                   }}/>*/}
+                            <div className="text" style={{
+                                position: 'absolute',
+                                top: '85%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '1rem',
+                                textAlign: 'left',
+                                maxWidth: '80%',
+                                padding: '1rem',
+
+                            }}>
+                                <Image src={step3} alt="Étape 1" objectFit="contain" width={100} height={100}
+                                       style={{flexShrink: 0}}/>
+                                <h2 className="green" style={{margin: 0}}>03</h2>
+                                <p style={{margin: 0}}>Le flacon Refresh est rechargeable. Utilisez les recharges
+                                    officielles Bestiary pour garantir une efficacité optimale.</p>
+                            </div>
+                            {/* <Image src={step3} alt="Étape 3" objectFit="contain" width={800}
                                    style={{
                                        position: 'absolute',
                                        top: '85%',
                                        left: '50%',
                                        transform: 'translate(-50%, -50%)'
-                                   }}/>
+                                   }}/>*/}
                         </div>
                     </div>
                 </div>
@@ -149,9 +224,9 @@ const SnappingScroll = () => {
                     <div className="inner">
                         <Image src={etiquette} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
                     <div className="block-description">
-                        <Image src={description1} alt="Étape 1" objectFit="contain" style={{ marginBottom: '1rem' }}/>
-                        <Image src={description2} alt="Étape 1" objectFit="contain" style={{ marginBottom: '1rem' }}/>
-                        <Image src={description3} alt="Étape 1" objectFit="contain" style={{ marginBottom: '1rem' }}/>
+                        <Image src={description1} alt="Étape 1" objectFit="contain" style={{marginBottom: '1rem'}}/>
+                        <Image src={description2} alt="Étape 1" objectFit="contain" style={{marginBottom: '1rem'}}/>
+                        <Image src={description3} alt="Étape 1" objectFit="contain" style={{marginBottom: '1rem'}}/>
                     </div>
 
                 </div>
@@ -163,7 +238,7 @@ const SnappingScroll = () => {
                         <div className="block-description">
                             <Image src={avis1} alt="Étape 1" objectFit="contain" style={{
                                 width: '30%',
-                                marginBottom:'10rem',
+                                marginBottom: '10rem',
                                 position: 'absolute',
                                 top: '20%',
                                 left: '20%',
@@ -259,7 +334,9 @@ const SnappingScroll = () => {
                 margin-right: 5rem;
                 margin-left: 2rem;
               }
-              
+
+
+
             `}</style>
         </div>
     );
