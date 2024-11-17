@@ -199,7 +199,8 @@ const SnappingScroll = () => {
 
             <style jsx>{`
               section {
-                height: 100vh;
+                //height: 100vh;
+                height: fit-content;
                 width: 100vw;
                 background-color: black;
               }

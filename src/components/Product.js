@@ -57,12 +57,12 @@ const Product = () => {
         <div ref={sectionRef} className="product-container">
             <div className="top-links">
                 <a href="#" className="link white">Inclusif</a>
-                <a href="#" className="link green">Clean</a>
+                <a href="#" className="link green-background">Clean</a>
                 <a href="#" className="link white">Ethique</a>
             </div>
             <div className="middle-section">
                 <h1 ref={titleRef} className="title">L’essentiel, pour une hygiène de vie <span
-                    className="green">optimisée.</span></h1>
+                    className="green-background">optimisée.</span></h1>
                 <div className="image-container">
                     <Image src={imgProduct} alt="Image de Produit" layout="fill"
                            style={{objectFit: 'cover'}} // remplace objectFit
@@ -79,22 +79,28 @@ const Product = () => {
               .product-container {
                 background-color: black; /* Fond noir intégral */
                 color: white; /* Couleur du texte par défaut */
-                height: 100vh; /* Hauteur de la section */
+                height: auto; /* Permet au conteneur de s'adapter au contenu */
+                min-height: 100vh; /* Assure qu'il occupe au moins la hauteur de l'écran */
+              
+                //height: 100vh; /* Hauteur de la section */
                 width: 100vw;
                 position: relative; /* Nécessaire pour le positionnement absolu */
+                overflow-y: auto;
+                padding: 4rem 0;
               }
+              
 
               .top-links {
                 display: grid; /* Flex pour aligner les liens horizontalement */
                 justify-content: space-around; /* Espacement entre les liens */
                 text-align: center;
-                padding: 20px; /* Espacement interne */
+                padding: 2rem 0; /* Espacement interne */
                 background-color: black; /* Fond noir pour les liens */
               }
 
               .link {
                 text-decoration: none; /* Pas de soulignement */
-                font-size: 20px; /* Taille de police pour les liens */
+                font-size: 32px; /* Taille de police pour les liens */
                 text-transform: uppercase;
               }
 
@@ -102,13 +108,21 @@ const Product = () => {
                 color: white; /* Liens en blanc */
               }
 
+              .green-background {
+                color: #000000;
+                background-color: #11FF00; /* Liens en vert */
+              }
+              
               .green {
                 color: #11FF00; /* Liens en vert */
               }
 
+
               .middle-section {
                 position: relative; /* Nécessaire pour positionner les éléments internes */
-                height: calc(100vh - 60px); /* Hauteur restante après les liens */
+                //height: calc(120vh - 60px); /* Hauteur restante après les liens */
+                //height: auto;
+                //min-height: 100vh;
                 display: flex; /* Utiliser flexbox pour centrer le contenu */
                 justify-content: center; /* Centrer horizontalement */
                 align-items: center; /* Centrer verticalement */
@@ -123,8 +137,9 @@ const Product = () => {
                 text-align: center;
                 color: white;
                 transform: translateX(-50%); /* Ajuster le centrage */
-                font-size: 36px; /* Taille du titre */
-                width: 30%;
+                font-size: 45px; /* Taille du titre */
+                width: 40%;
+                z-index: 1;
               }
 
               .image-container {
@@ -138,7 +153,7 @@ const Product = () => {
               .text-block {
                 position: absolute; /* Positionnement absolu pour superposer le texte */
                 color: white; /* Couleur du texte */
-                font-size: 24px; /* Taille de police pour les blocs de texte */
+                font-size: 18px; /* Taille de police pour les blocs de texte */
               }
 
               .block1 {

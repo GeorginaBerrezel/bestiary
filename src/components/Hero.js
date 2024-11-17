@@ -85,8 +85,8 @@ const Hero = () => {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
                 width: 100%;
-                height: 100vh;
-                padding: 20px;
+                height: auto;
+                padding: 4rem 2rem;
                 background-color: #F5F5F5;
                 align-items: flex-start;
                 justify-items: center;
