@@ -70,6 +70,7 @@ const SnappingScroll = () => {
             </section>
 
             <section className="container">
+
                 <div className="panel">
                     <div className="inner">
                         <h2 className="green"
@@ -84,6 +85,7 @@ const SnappingScroll = () => {
                             profondeurs du monde souterrain, vous êtes confronté à des températures extrêmes.</p>
                     </div>
                 </div>
+
 
                 <div className="panel">
                     <div className="inner">
@@ -134,6 +136,7 @@ const SnappingScroll = () => {
 
                     </div>
                 </div>
+
 
                 <div className="panel">
                     <div className="inner">
@@ -220,6 +223,8 @@ const SnappingScroll = () => {
                         </div>
                     </div>
                 </div>
+
+
                 <div className="panel">
                     <div className="inner">
                         <Image src={etiquette} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
@@ -238,38 +243,53 @@ const SnappingScroll = () => {
                     </div>
 
                 </div>
+
+
                 <div className="panel">
                     <div className="inner">
                         <h2
-                            style={{position: 'absolute', bottom: '5%', left: '10%', zIndex: '1'}}>Avis</h2>
+                            style={{position: 'absolute', bottom: '0', left: '5%', zIndex: '1'}}>Avis</h2>
 
-                        <div className="block-description">
-                            <Image src={avis1} alt="Étape 1" objectFit="contain" style={{
-                                width: '30%',
+                        <div className="block-avis">
+                            <div className="block-avis-1" style={{
+                                width: '50%',
                                 marginBottom: '10rem',
                                 position: 'absolute',
                                 top: '20%',
-                                left: '20%',
+                                left: '30%',
                                 transform: 'translate(-50%, -50%)'
-                            }}/>
-                            <Image src={avis2} alt="Étape 1" objectFit="contain" style={{
-                                width: '30%',
+                            }}>
+                                <p className="title-avis">Sensation de Bien-être</p>
+                                <p className="description-avis">“Depuis que j'utilise Refresh, je me sens revitalisé. La fraîcheur du parfum m'aide à mieux supporter la chaleur des Enfers.”</p>
+                                <p className="author-avis">Alecto</p>
+                            </div>
+                            <div className="block-avis-1" style={{
+                                width: '50%',
                                 position: 'absolute',
-                                top: '40%',
+                                top: '55%',
                                 left: '50%',
                                 transform: 'translate(-50%, -50%)'
-                            }}/>
-                            <Image src={avis3} alt="Étape 1" objectFit="contain" style={{
-                                width: '30%',
+                            }}>
+                            <p className="title-avis">Conception Adaptée</p>
+                            <p className="description-avis">“LA pompe à ballon est parfaitement conçu pour mes pattes. L'application est simple et efficace, et j'apprécie énormément le design.”</p>
+                            <p className="author-avis">Nyx</p>
+                            </div>
+                            <div className="block-avis-1" style={{
+                                width: '50%',
                                 position: 'absolute',
-                                top: '60%',
-                                left: '70%',
+                                top: '86%',
+                                left: '65%',
                                 transform: 'translate(-50%, -50%)'
-                            }}/>
+                            }}>
+                            <p className="title-avis">Maîtrise des Flammes</p>
+                            <p className="description-avis">“La fonction extincteur est une véritable innovation !”</p>
+                            <p className="author-avis">Brontès</p>
+                        </div>
                         </div>
 
                     </div>
                 </div>
+
                 <div className="panel">
                     <div className="inner">
                         <Image src={packagingAll} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
@@ -358,6 +378,29 @@ const SnappingScroll = () => {
                 font-size: 18px;
                 font-weight: 400;
                 margin-bottom: 1rem;
+              }
+
+              .block-avis {
+
+              }
+
+              .block-avis-1 {
+                text-transform: uppercase;
+                border: solid 1px black;
+                padding: 1rem;
+              }
+              .title-avis {
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 24px;
+              }
+              .description-avis {
+                margin: 1rem 0;
+                font-size: 18px;
+              }
+              .author-avis {
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 18px;
+                text-align: right;
               }
 
 
