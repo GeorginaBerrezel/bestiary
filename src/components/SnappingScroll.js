@@ -164,7 +164,7 @@ const SnappingScroll = () => {
 
                             <div className="text" style={{
                                 position: 'absolute',
-                                top: '50%',
+                                top: '55%',
                                 left: '50%',
                                 transform: 'translate(-50%, -50%)',
                                 display: 'flex',
@@ -224,9 +224,17 @@ const SnappingScroll = () => {
                     <div className="inner">
                         <Image src={etiquette} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
                     <div className="block-description">
-                        <Image src={description1} alt="Étape 1" objectFit="contain" style={{marginBottom: '1rem'}}/>
-                        <Image src={description2} alt="Étape 1" objectFit="contain" style={{marginBottom: '1rem'}}/>
-                        <Image src={description3} alt="Étape 1" objectFit="contain" style={{marginBottom: '1rem'}}/>
+                        <Image src={description1} alt="Étape 1" objectFit="contain" style={{width: '100px'}}/>
+                        <h3 className="text-title">Infusion de Menthe Céleste</h3>
+                        <p className="text-description">Renforce la longévité
+                            de fraîcheur </p>
+                        <Image src={description2} alt="Étape 1" objectFit="contain" style={{width: '100px'}}/>
+                        <h3 className="text-title">Essence de Brise Éthérée</h3>
+                        <p className="text-description">fraîcheur légère et durable, pour les environnements chauds</p>
+                        <Image src={description3} alt="Étape 1" objectFit="contain" style={{width: '100px'}}/>
+                        <h3 className="text-title">Extrait de Fleurs du Styx</h3>
+                        <p className="text-description">note florale subtile
+                            qui apaise les sens</p>
                     </div>
 
                 </div>
@@ -331,8 +339,25 @@ const SnappingScroll = () => {
               .block-description {
                 display: grid;
                 justify-content: space-between;
+                justify-items: center;
                 margin-right: 5rem;
                 margin-left: 2rem;
+                text-align: center;
+              }
+
+              .text-title {
+                color: black; /* Changement de la couleur du texte en noir */
+                font-size: 18px;
+                font-weight: 700;
+                text-transform: uppercase;
+
+              }
+
+              .text-description {
+                color: black; /* Changement de la couleur du texte en noir */
+                font-size: 18px;
+                font-weight: 400;
+                margin-bottom: 1rem;
               }
 
 
