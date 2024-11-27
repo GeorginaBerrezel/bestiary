@@ -16,7 +16,9 @@ import description3 from "../../public/description3.png";
 import avis1 from "../../public/avis1.png";
 import avis2 from "../../public/avis2.png";
 import avis3 from "../../public/avis3.png";
-import packagingAll from "../../public/packaging-all.jpg";
+import packaging1 from "../../public/pack-1.jpg";
+import packaging2 from "../../public/pack-2.jpg";
+import packaging3 from "../../public/pack-3.jpg";
 import Vote from "@/components/Vote";
 
 
@@ -260,7 +262,8 @@ const SnappingScroll = () => {
                                 transform: 'translate(-50%, -50%)'
                             }}>
                                 <p className="title-avis">Sensation de Bien-être</p>
-                                <p className="description-avis">“Depuis que j'utilise Refresh, je me sens revitalisé. La fraîcheur du parfum m'aide à mieux supporter la chaleur des Enfers.”</p>
+                                <p className="description-avis">“Depuis que j'utilise Refresh, je me sens revitalisé. La
+                                    fraîcheur du parfum m'aide à mieux supporter la chaleur des Enfers.”</p>
                                 <p className="author-avis">Alecto</p>
                             </div>
                             <div className="block-avis-1" style={{
@@ -270,9 +273,11 @@ const SnappingScroll = () => {
                                 left: '50%',
                                 transform: 'translate(-50%, -50%)'
                             }}>
-                            <p className="title-avis">Conception Adaptée</p>
-                            <p className="description-avis">“LA pompe à ballon est parfaitement conçu pour mes pattes. L'application est simple et efficace, et j'apprécie énormément le design.”</p>
-                            <p className="author-avis">Nyx</p>
+                                <p className="title-avis">Conception Adaptée</p>
+                                <p className="description-avis">“LA pompe à ballon est parfaitement conçu pour mes
+                                    pattes. L'application est simple et efficace, et j'apprécie énormément le
+                                    design.”</p>
+                                <p className="author-avis">Nyx</p>
                             </div>
                             <div className="block-avis-1" style={{
                                 width: '50%',
@@ -281,10 +286,11 @@ const SnappingScroll = () => {
                                 left: '65%',
                                 transform: 'translate(-50%, -50%)'
                             }}>
-                            <p className="title-avis">Maîtrise des Flammes</p>
-                            <p className="description-avis">“La fonction extincteur est une véritable innovation !”</p>
-                            <p className="author-avis">Brontès</p>
-                        </div>
+                                <p className="title-avis">Maîtrise des Flammes</p>
+                                <p className="description-avis">“La fonction extincteur est une véritable innovation
+                                    !”</p>
+                                <p className="author-avis">Brontès</p>
+                            </div>
                         </div>
 
                     </div>
@@ -292,8 +298,20 @@ const SnappingScroll = () => {
 
                 <div className="panel">
                     <div className="inner">
-                        <Image src={packagingAll} alt="Image de Produit" layout="fill" objectFit="contain"/></div>
+                        <div className="custom-layout">
+                            <div className="packaging packaging1">
+                                <Image src={packaging1} alt="Packaging 1" layout="responsive" width={100} height={100}/>
+                            </div>
+                            <div className="packaging packaging2">
+                                <Image src={packaging2} alt="Packaging 2" layout="responsive" width={100} height={100}/>
+                            </div>
+                            <div className="packaging packaging3">
+                                <Image src={packaging3} alt="Packaging 3" layout="responsive" width={100} height={100}/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </section>
 
             <section>
@@ -380,30 +398,83 @@ const SnappingScroll = () => {
                 margin-bottom: 1rem;
               }
 
-              .block-avis {
-
-              }
 
               .block-avis-1 {
                 text-transform: uppercase;
                 border: solid 1px black;
                 padding: 1rem;
               }
+
               .title-avis {
                 font-family: 'JetBrains Mono', monospace;
                 font-size: 24px;
               }
+
               .description-avis {
                 margin: 1rem 0;
                 font-size: 18px;
               }
+
               .author-avis {
                 font-family: 'JetBrains Mono', monospace;
                 font-size: 18px;
                 text-align: right;
               }
 
+              .custom-layout {
+                display: grid;
+                grid-template-rows: repeat(2, 1fr); /* Deux lignes égales */
+                grid-template-columns: 1fr 3fr; /* Première colonne pour packaging1 et 2, deuxième colonne pour packaging3 */
+                height: 100%; /* S'assure que la hauteur du conteneur est visible */
+                width: 100%; /* Même chose pour la largeur */
+                gap: 3rem; /* Ajustez les espaces entre les éléments si besoin */
+              }
 
+              .packaging1,
+              .packaging2,
+              .packaging3 {
+                position: relative;
+                width: 100%; /* Occupe toute la largeur */
+                display: flex; /* Permet un contrôle précis des enfants */
+                justify-content: center; /* Centre le contenu horizontalement (optionnel) */
+                align-items: center; /* Centre le contenu verticalement */
+                margin: 0; /* Évite tout espace supplémentaire */
+                padding: 0; /* Évite tout espace supplémentaire */
+              }
+
+              .packaging1 img,
+              .packaging2 img {
+                display: block; /* Évite l'espace en dessous des images dû au comportement inline par défaut */
+                width: 100%; /* Ajustez selon vos besoins */
+                height: 100%; /* S'assure que l'image occupe toute la hauteur disponible */
+                object-fit: cover; /* Ajuste la manière dont l'image est redimensionnée */
+              }
+
+              .packaging3 {
+                grid-row: 1 / 3; /* S'étend sur deux lignes */
+                grid-column: 2;
+              }
+
+              /* ============ Media Query pour les petits écrans ============ */
+              @media (max-width: 1090px) {
+                .custom-layout {
+                  display: flex; /* Passe la grille en flexbox pour empiler les éléments */
+                  flex-direction: column; /* Positionne les éléments les uns sous les autres */
+                  gap: 1rem; /* Réduit l'espace entre les éléments */
+                }
+
+                .packaging1,
+                .packaging2,
+                .packaging3 {
+                  width: 100%; /* Occupe toute la largeur */
+                  height: auto; /* Ajuste la hauteur à leur contenu */
+                }
+
+                .packaging1 img,
+                .packaging2 img {
+                  height: auto; /* Laisse l'image s'adapter à sa largeur */
+                }
+              }
 
             `}</style>
         </div>
