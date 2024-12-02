@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import gsap from "gsap";
-import Image from "next/image";  // Importation du composant Image
+import Image from "next/image"; // Importation du composant Image
 
 export default function Loader() {
     useEffect(() => {
@@ -8,25 +8,23 @@ export default function Loader() {
 
         // Animation du loader avec le gif
         const tlLoader = gsap.timeline({
-            repeat: 0,  // Répéter l'animation une seule fois
+            repeat: 0, // Répéter l'animation une seule fois
             onComplete: loadContent,
         });
 
         tlLoader
             .fromTo(
-                ".loader-gif",  // Cible l'élément avec la classe 'loader-gif'
+                ".loader-gif", // Cible l'élément avec la classe 'loader-gif'
                 { opacity: 1 },
                 { opacity: 1, duration: 3, ease: "Back.easeInOut" }
             )
             .to(".loader-container", {
                 autoAlpha: 0,
-                //scale: 1,
-                //y: -100,
                 duration: 0.5,
                 ease: "Back.easeIn",
                 onComplete: () => {
                     console.log("Loader fade-out completed");
-                }
+                },
             });
 
         // Fonction pour gérer la disparition du loader après l'animation
@@ -40,12 +38,12 @@ export default function Loader() {
             <div id="loader" className="relative w-full h-full">
                 {/* Utilisation du composant Image de Next.js pour le GIF */}
                 <Image
-                    src="/MONSTRES.gif"  // Chemin vers ton GIF
+                    src="/MONSTRES.gif" // Chemin vers le GIF
                     alt="Loader"
+                    unoptimized // Déclare que l'image ne sera pas optimisée
                     className="loader-gif"
-                    //layout="intrinsic"  // Ajuste l'image selon ses dimensions originales
-                    width={400}  // Largeur du GIF
-                    height={400}  // Hauteur du GIF
+                    width={400} // Largeur du GIF
+                    height={400} // Hauteur du GIF
                 />
             </div>
         </div>

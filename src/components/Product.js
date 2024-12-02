@@ -170,6 +170,46 @@ const Product = () => {
                 width: 30%;
 
               }
+
+              @media (max-width: 1090px) {
+
+                .top-links {
+                  display: flex;
+                  flex-direction: column; /* Chaque lien sur une ligne */
+                  align-items: center; /* Centrer horizontalement */
+                }
+
+                .middle-section {
+                  flex-direction: column; /* Aligner les éléments verticalement */
+                  text-align: center; /* Centrer le texte */
+                }
+
+                .title {
+                  //width: 80%; /* S'adapter à la largeur de l'écran */
+                  font-size: 32px; /* Réduire la taille du titre */
+                }
+
+                .image-container {
+                  //height: 300px; /* Ajuster la hauteur de l'image */
+                  width: 100%; /* Prendre toute la largeur disponible */
+                }
+
+                .text-block {
+                  width: 80%; /* Utiliser une largeur adaptée */
+                  font-size: 16px; /* Réduire légèrement la taille du texte */
+                  position: relative; /* Annuler le positionnement absolu */
+                  transform: none; /* Annuler la transformation */
+                  margin: 1rem 0; /* Ajouter un espacement entre les blocs */
+                }
+
+                .block1,
+                .block2 {
+                  left: auto; /* Réinitialiser la position horizontale */
+                  top: auto; /* Réinitialiser la position verticale */
+                  bottom: auto; /* Réinitialiser la position verticale */
+                }
+              }
+              
             `}</style>
         </div>
     );
