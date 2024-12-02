@@ -184,6 +184,21 @@ const ScrollTriggerComponent = () => {
                 padding: 25px 30px 10px;
                 margin-bottom: 40px;
               }
+
+              @media (max-width: 1090px) {
+
+                #content {
+                  width: 100vw;
+                }
+                .intro h2 {
+                  width: auto;
+                }
+
+                .image2 {
+                  left: 0;
+                }
+              }
+              
             `}</style>
         </div>
     );
