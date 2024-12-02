@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import gsap from "gsap";
 import Loader from "@/components/Loader";
 import ScrollTrigger from "../components/ScrollTrigger";
@@ -27,13 +27,25 @@ export default function Home() {
                 <ScrollingText />
             </div>
 
-            <SnappingScroll />
-
+            <div className="snapping-scroll">
+                <SnappingScroll />
+            </div>
             <Order />
 
             <footer>
                 <Footer />
             </footer>
+
+            <style jsx>{`
+
+              @media (max-width: 1090px) {
+                .snapping-scroll {
+                  display: none;
+                }
+              }
+
+            `}</style>
+
         </div>
     );
 }

@@ -454,6 +454,14 @@ const SnappingScroll = () => {
 
               /* ============ Media Query pour les petits écrans ============ */
               @media (max-width: 1090px) {
+                
+                p, h2 {
+                  position: relative;
+                  font-size: 16px; /* Taille du titre */
+                }
+                h2 {
+                  font-size: 32px; /* Taille du titre */
+                }
                 .custom-layout {
                   display: flex; /* Passe la grille en flexbox pour empiler les éléments */
                   flex-direction: column; /* Positionne les éléments les uns sous les autres */
