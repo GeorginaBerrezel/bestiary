@@ -36,7 +36,7 @@ const Hero = () => {
         <div className="hero-container" ref={sectionRef}>
             <div className="hero-block" ref={el => imagesRef.current[0] = el}>
                 <div className="hero-image">
-                    <Image src={img1} alt="Image 1" layout="fill" objectFit="cover" />
+                    <Image src={img1} alt="Image 1" layout="fill" className="image-style" />
                 </div>
                 <div className="info-box">
                     <div className="text-container">
@@ -51,7 +51,7 @@ const Hero = () => {
 
             <div className="hero-block" ref={el => imagesRef.current[1] = el}>
                 <div className="hero-image">
-                    <Image src={img2} alt="Image 2" layout="fill" objectFit="cover" />
+                    <Image src={img2} alt="Image 2" layout="fill" className="image-style" />
                 </div>
                 <div className="info-box">
                     <div className="text-container">
@@ -66,7 +66,7 @@ const Hero = () => {
 
             <div className="hero-block" ref={el => imagesRef.current[2] = el}>
                 <div className="hero-image">
-                    <Image src={img3} alt="Image 3" layout="fill" objectFit="cover" />
+                    <Image src={img3} alt="Image 3" layout="fill" className="image-style" />
                 </div>
                 <div className="info-box">
                     <div className="text-container">
@@ -105,6 +105,10 @@ const Hero = () => {
                 max-width: 100%;
                 overflow: hidden;
                 border-radius: 0px;
+              }
+              
+              .image-style {
+                object-fit: cover;
               }
 
               .info-box {

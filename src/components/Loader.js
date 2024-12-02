@@ -43,7 +43,7 @@ export default function Loader() {
                     src="/MONSTRES.gif"  // Chemin vers ton GIF
                     alt="Loader"
                     className="loader-gif"
-                    layout="intrinsic"  // Ajuste l'image selon ses dimensions originales
+                    //layout="intrinsic"  // Ajuste l'image selon ses dimensions originales
                     width={400}  // Largeur du GIF
                     height={400}  // Hauteur du GIF
                 />

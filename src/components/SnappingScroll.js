@@ -461,6 +461,7 @@ const SnappingScroll = () => {
                   display: flex; /* Passe la grille en flexbox pour empiler les éléments */
                   flex-direction: column; /* Positionne les éléments les uns sous les autres */
                   gap: 1rem; /* Réduit l'espace entre les éléments */
+                  height: 100vh;
                 }
 
                 .packaging1,
