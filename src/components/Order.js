@@ -110,6 +110,18 @@ const Order = () => {
               .image-container:hover .water-effect {
                 opacity: 1;
               }
+
+              @media (max-width: 1090px) {
+                .text-section {
+                  margin-left: 0;
+                }
+
+                .subtitle {
+                  font-size: 16px;
+                  width: 100%;
+                }
+                
+              }
             `}</style>
         </div>
     );

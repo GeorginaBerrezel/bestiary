@@ -161,6 +161,7 @@ const Hero = () => {
 
                 .hero-image {
                   height: 300px; /* Réduit la hauteur des images pour mieux s'adapter */
+                  width: 280px;
                 }
               }
             `}</style>
